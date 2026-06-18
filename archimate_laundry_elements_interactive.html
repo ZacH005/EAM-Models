@@ -1,0 +1,118 @@
+<h2 class="sr-only">Interactive ArchiMate element classification for laundry service model</h2>
+<style>
+.layer{margin:0 0 2px;border-radius:var(--border-radius-lg);overflow:hidden}
+.lh{padding:10px 16px;font-weight:500;font-size:15px;display:flex;align-items:center;gap:8px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;padding:2px}
+.col-h{font-size:12px;color:var(--color-text-secondary);text-align:center;padding:6px 4px}
+.cell{padding:8px;min-height:60px}
+.el{padding:5px 8px;border-radius:var(--border-radius-md);margin:3px 0;cursor:pointer;font-size:13px;transition:opacity .15s;border:0.5px solid transparent}
+.el:hover{opacity:.8}
+.el .type{font-size:11px;margin-top:2px;opacity:.75}
+#reason{margin:12px 0 0;padding:12px 16px;border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-secondary);min-height:48px;font-size:14px;line-height:1.6;color:var(--color-text-primary);background:var(--color-background-secondary)}
+#reason-title{font-weight:500;margin:0 0 4px}
+#reason-text{margin:0;color:var(--color-text-secondary)}
+.b-bg{background:#FAEEDA}.a-bg{background:#E6F1FB}.t-bg{background:#EAF3DE}
+.b-el{background:#FAC775;color:#633806;border-color:#BA7517}
+.a-el{background:#B5D4F4;color:#042C53;border-color:#378ADD}
+.t-el{background:#C0DD97;color:#173404;border-color:#639922}
+.b-el .type{color:#854F0B}.a-el .type{color:#0C447C}.t-el .type{color:#27500A}
+</style>
+
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;margin:0 0 4px">
+<div class="col-h"><i class="ti ti-user" style="font-size:14px" aria-hidden="true"></i> Active structure</div>
+<div class="col-h"><i class="ti ti-arrow-right" style="font-size:14px" aria-hidden="true"></i> Behavior</div>
+<div class="col-h"><i class="ti ti-file" style="font-size:14px" aria-hidden="true"></i> Passive structure</div>
+</div>
+
+<div class="layer b-bg">
+<div class="lh" style="color:#633806">Business layer</div>
+<div class="grid">
+<div class="cell b-bg">
+<div class="el b-el" onclick="show('Guest','Business Role','The guest is a person who uses the laundry. Could they exist without computers? Yes. Are they a doer? Yes, they perform actions like submitting reservations. Multiple real people fill this role, so it is a Role not an Actor.')">Guest<div class="type">Business Role</div></div>
+<div class="el b-el" onclick="show('Concierge Team','Business Role','The concierge team handles the fallback scenario from the Julian P. story. They are people who perform actions (arranging external cleaning). They exist without computers. Multiple staff fill this role.')">Concierge Team<div class="type">Business Role</div></div>
+</div>
+<div class="cell b-bg">
+<div class="el b-el" onclick="show('Laundry Service','Business Service','This is what the hotel offers to guests — the externally visible capability. The guest knows the hotel has a laundry service. It does not describe HOW it works internally. Services are realized by processes. Label uses noun-verb ending in -ing.')">Laundry Service<div class="type">Business Service</div></div>
+<div class="el b-el" onclick="show('Submit Laundry Reservation','Business Process','This is a step-by-step action the guest performs: opening the app, choosing a program, submitting. It is a sequence of activities producing a result (the reservation). Processes are internal mechanics that realize services.')">Submit Laundry Reservation<div class="type">Business Process</div></div>
+<div class="el b-el" onclick="show('Select Washing Program','Business Process','The guest chooses wash, dry, or combined. This is an action performed by a person, not by software. It could happen without a computer (choosing from a menu). It produces a specific result (a program selection).')">Select Washing Program<div class="type">Business Process</div></div>
+<div class="el b-el" onclick="show('Start Washing Machine','Business Process','The guest physically goes to the machine and starts it. This is a human action at the business level — the guest interacts with the digital interface on site. The technology enables it, but the decision to start is business behavior.')">Start Washing Machine<div class="type">Business Process</div></div>
+<div class="el b-el" onclick="show('Arrange External Cleaning','Business Process','From the Julian P. story: when all machines are busy and the request is urgent, the concierge arranges an external cleaning service. This is a human decision and action, not automated by software.')">Arrange External Cleaning<div class="type">Business Process</div></div>
+</div>
+<div class="cell b-bg">
+<div class="el b-el" onclick="show('Laundry Reservation','Business Object','The concept of a reservation for a washing machine. Could this exist without computers? Yes, you could write it on paper. It gets created, read, and updated by processes. It is a thing acted upon, not a doer.')">Laundry Reservation<div class="type">Business Object</div></div>
+<div class="el b-el" onclick="show('Washing Program','Business Object','The concept of a wash/dry/combined selection. It is a business domain concept that gets chosen and recorded. Something creates or reads it — it does not do anything itself.')">Washing Program<div class="type">Business Object</div></div>
+<div class="el b-el" onclick="show('Laundry Charge','Business Object','The cost generated for laundry. It is a concept the business uses (billing). It gets calculated and recorded. It does not perform actions. It exists as a concept even without computers.')">Laundry Charge<div class="type">Business Object</div></div>
+<div class="el b-el" onclick="show('Open Account','Business Object','The running tab of all guest charges. A business domain concept — hotels had open accounts long before computers. Processes write to it (add charges). Shared element across all F3 sub-areas.')">Open Account<div class="type">Business Object</div></div>
+<div class="el b-el" onclick="show('Guest Reservation','Business Object','The overall hotel booking. Laundry charges get added to it. It is a business concept that exists independently of technology. Shared element with other F3 areas.')">Guest Reservation<div class="type">Business Object</div></div>
+</div>
+</div>
+</div>
+
+<div class="layer a-bg">
+<div class="lh" style="color:#042C53">Application layer</div>
+<div class="grid">
+<div class="cell a-bg">
+<div class="el a-el" onclick="show('WeWash Application','Application Component','The guest-facing laundry app. It is software — it cannot exist without a computer. It is a doer: it checks availability, assigns machines, sends notifications. Modular and self-contained.')">WeWash Application<div class="type">App Component</div></div>
+<div class="el a-el" onclick="show('WeWash Platform','Application Component','The backend system behind the WeWash app. It manages the waiting list, processes reservations, transfers charges. Separate from the guest app because the source distinguishes them: charges transfer from WeWash platform to HMS.')">WeWash Platform<div class="type">App Component</div></div>
+<div class="el a-el" onclick="show('Hotel Management System','Application Component','The central hotel software. Receives laundry charges and adds them to the guest open account. It is software, it performs functions, it is self-contained. Shared element across all F3 areas.')">Hotel Management System<div class="type">App Component</div></div>
+<div class="el a-el" onclick="show('WeWash App Interface','Application Interface','The screen the guest sees on their phone when using the WeWash app. It is the access point where the application service is exposed to the user. Not the software itself, but how the user interacts with it.')">WeWash App Interface<div class="type">App Interface</div></div>
+<div class="el a-el" onclick="show('Digital Washing Machine Interface','Application Interface','The physical screen on the washing machine where guests select and start programs. It is an access point for application functionality. The source explicitly names it as a digital interface on the machine.')">Digital Machine Interface<div class="type">App Interface</div></div>
+</div>
+<div class="cell a-bg">
+<div class="el a-el" onclick="show('Check Machine Availability','Application Function','The system checks whether machines are free. This is automated software behavior — it cannot happen without a computer. It is grouped by capability (checking), not by sequence. The source says the system automatically checks.')">Check Machine Availability<div class="type">App Function</div></div>
+<div class="el a-el" onclick="show('Assign Machine to Guest','Application Process','When a machine is free, the system assigns it. This is a specific step in a sequence (check → assign → notify). It produces a concrete result: machine is reserved for that guest.')">Assign Machine to Guest<div class="type">App Process</div></div>
+<div class="el a-el" onclick="show('Manage Waiting List','Application Function','The system manages the queue of pending requests. This is a capability that runs continuously — not a one-time sequential step. The source says the waiting list is managed centrally by the system.')">Manage Waiting List<div class="type">App Function</div></div>
+<div class="el a-el" onclick="show('Send Push Notification','Application Process','The system sends a confirmation to the guest phone. This is a specific action in a sequence (assign machine → send notification). It is software behavior producing a result (notification delivered).')">Send Push Notification<div class="type">App Process</div></div>
+<div class="el a-el" onclick="show('Activate Machine','Application Process','At the scheduled time, the system activates the assigned machine. This is automated software behavior triggering a physical action. It is a specific step that produces a result (machine turns on).')">Activate Machine<div class="type">App Process</div></div>
+<div class="el a-el" onclick="show('Calculate Laundry Cost','Application Function','Cost is calculated based on the selected program. This is a reusable capability — the same calculation logic applies regardless of context. Not a sequence step, but a function that gets called.')">Calculate Laundry Cost<div class="type">App Function</div></div>
+<div class="el a-el" onclick="show('Record Laundry Charge','Application Process','After the machine starts, the charge is recorded. This is a specific step in the sequence (machine starts → charge recorded). It writes data to the system.')">Record Laundry Charge<div class="type">App Process</div></div>
+<div class="el a-el" onclick="show('Transfer Charge to HMS','Application Process','Charges move from WeWash platform to Hotel Management System via Wi-Fi. This is a specific action with a clear result (data arrives at HMS). It is part of the billing sequence.')">Transfer Charge to HMS<div class="type">App Process</div></div>
+</div>
+<div class="cell a-bg">
+<div class="el a-el" onclick="show('Machine Availability Data','Data Object','Digital data about which machines are free or occupied. Cannot exist without a computer — it is structured data inside the WeWash system. Processes read it to make assignment decisions.')">Machine Availability Data<div class="type">Data Object</div></div>
+<div class="el a-el" onclick="show('Waiting List Data','Data Object','The digital queue of guests waiting for machines. Stored on the WeWash server. Gets read (to check position) and written (to add/remove guests). Structured data for automated processing.')">Waiting List Data<div class="type">Data Object</div></div>
+<div class="el a-el" onclick="show('Laundry Reservation Data','Data Object','The digital record of a laundry booking inside the WeWash system. This is the application-layer version of the business object Laundry Reservation. The business object is the concept; this is the actual database record.')">Laundry Reservation Data<div class="type">Data Object</div></div>
+<div class="el a-el" onclick="show('Laundry Charge Data','Data Object','The digital cost record. Gets created by Calculate Laundry Cost, transferred to HMS. This is the app-layer version of the business Laundry Charge — the actual data that moves between systems.')">Laundry Charge Data<div class="type">Data Object</div></div>
+<div class="el a-el" onclick="show('Open Account Data','Data Object','The digital guest account record in the HMS. Charges get written here. This is the app-layer counterpart of the business Open Account concept. Shared element across F3.')">Open Account Data<div class="type">Data Object</div></div>
+<div class="el a-el" onclick="show('Push Notification','Data Object','The notification message itself — the content that gets sent to the guest phone. It is digital data created by a process and delivered to a device. It does not perform actions; it gets created and sent.')">Push Notification<div class="type">Data Object</div></div>
+</div>
+</div>
+</div>
+
+<div class="layer t-bg">
+<div class="lh" style="color:#173404">Technology layer</div>
+<div class="grid">
+<div class="cell t-bg">
+<div class="el t-el" onclick="show('WeWash Server','Node','A computational resource that hosts the WeWash platform and manages the waiting list. You cannot touch a cloud server, but it is a physical resource that runs software. Node = computational resource that hosts things.')">WeWash Server<div class="type">Node</div></div>
+<div class="el t-el" onclick="show('Washing Machine','Device','A physical machine you can touch and kick. It has processing capability (it runs wash cycles). The source calls them integrated washer-dryers. Device = physical IT resource upon which things are deployed.')">Washing Machine<div class="type">Device</div></div>
+<div class="el t-el" onclick="show('Door Card Reader','Device','A physical box mounted on the laundry room wall. It reads RFID signals from key cards. You can touch it. It has processing capability (reading and transmitting data).')">Door Card Reader<div class="type">Device</div></div>
+<div class="el t-el" onclick="show('Guest Smartphone','Device','The physical phone the guest uses to run the WeWash app. It is hardware with processing capability. The WeWash app (application component) runs on this device.')">Guest Smartphone<div class="type">Device</div></div>
+<div class="el t-el" onclick="show('Key Card','Device','The physical RFID card that stores access rights. It is a tangible object with embedded technology. The guest holds it to the reader. Some teams model this as an Artifact instead — both are defensible.')">Key Card<div class="type">Device</div></div>
+<div class="el t-el" onclick="show('Hotel Wi-Fi Network','Communication Network','The wireless network connecting devices. It physically exists as routers, access points, and radio signals. It connects the WeWash platform to the HMS for charge transfer. Communication Network = structures that connect devices.')">Hotel Wi-Fi Network<div class="type">Comm. Network</div></div>
+<div class="el t-el" onclick="show('Door System Software','System Software','Low-level software that verifies key card access permissions and unlocks doors. It runs on the door hardware, not used directly by guests. System Software = low-level software providing an execution environment. Not an Application Component because it controls physical infrastructure.')">Door System Software<div class="type">System Software</div></div>
+</div>
+<div class="cell t-bg">
+<div class="el t-el" onclick="show('RFID Access Verification','Technology Function','The door system reads the key card via RFID and checks if access is permitted. This is hardware-level behavior — the RFID reader physically transmits and receives data. It is a capability of the door system, not a sequential step.')">RFID Access Verification<div class="type">Tech Function</div></div>
+<div class="el t-el" onclick="show('Door Unlocking','Technology Function','If the key card is valid, the door unlocks. This is physical behavior — a lock mechanism activating. It is a capability provided by the door hardware, triggered after verification succeeds.')">Door Unlocking<div class="type">Tech Function</div></div>
+<div class="el t-el" onclick="show('Machine Activation','Technology Process','The physical machine powers on at the scheduled time. This is a specific sequential action in the technology layer — the application layer triggers it, and the physical device responds. Produces a result: machine is running.')">Machine Activation<div class="type">Tech Process</div></div>
+<div class="el t-el" onclick="show('Washing Cycle Execution','Technology Process','The actual washing/drying cycle running inside the machine. This is physical hardware behavior — water, heat, spinning. It is a sequence that runs to completion after the guest starts it.')">Washing Cycle Execution<div class="type">Tech Process</div></div>
+<div class="el t-el" onclick="show('Wi-Fi Data Transmission','Technology Service','The network provides the ability to transmit data between systems. This is what the Wi-Fi offers as a service — connectivity. The charge transfer from WeWash to HMS depends on this technology service.')">Wi-Fi Data Transmission<div class="type">Tech Service</div></div>
+</div>
+<div class="cell t-bg">
+<div class="el t-el" onclick="show('Key Card Access Rights','Artifact','The access permissions stored on the physical key card. This is data at the technology level — it is written to the card during check-in and read by the door reader via RFID. Artifact = a piece of data used in a technology process.')">Key Card Access Rights<div class="type">Artifact</div></div>
+<div class="el t-el" onclick="show('Charge Transfer Data','Artifact','The laundry charge data as it moves through the Wi-Fi network from WeWash server to HMS server. At the technology layer, this is the data packet being transmitted. It is the technology-level representation of the charge.')">Charge Transfer Data<div class="type">Artifact</div></div>
+</div>
+</div>
+</div>
+
+<div id="reason">
+<p id="reason-title">Click any element above</p>
+<p id="reason-text">You will see why it is classified in that specific layer and aspect, with the reasoning tests applied.</p>
+</div>
+
+<script>
+function show(name,type,why){
+document.getElementById('reason-title').textContent=name+' → '+type;
+document.getElementById('reason-text').textContent=why;
+}
+</script>
