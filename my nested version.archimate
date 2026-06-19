@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="ArchiHotel - Laundry Detailed Model (Nested)" id="id-model-laundry-nested" version="5.0.0">
+  <folder name="Strategy" id="id-fs" type="strategy"/>
+  <folder name="Business" id="id-fb" type="business">
+    <element xsi:type="archimate:BusinessRole" name="Guest" id="b-guest"/>
+    <element xsi:type="archimate:BusinessRole" name="Concierge Team" id="b-concierge"/>
+    <element xsi:type="archimate:BusinessService" name="Laundry Service" id="b-laundry-svc"/>
+    <element xsi:type="archimate:BusinessProcess" name="Submit Laundry Reservation" id="b-submit"/>
+    <element xsi:type="archimate:BusinessProcess" name="Select Washing Program" id="b-select"/>
+    <element xsi:type="archimate:BusinessProcess" name="Start Washing Machine" id="b-start"/>
+    <element xsi:type="archimate:BusinessProcess" name="Arrange External Cleaning" id="b-ext-clean"/>
+    <element xsi:type="archimate:BusinessObject" name="Laundry Reservation" id="b-laundry-res"/>
+    <element xsi:type="archimate:BusinessObject" name="Washing Program" id="b-wash-prog"/>
+    <element xsi:type="archimate:BusinessObject" name="Laundry Charge" id="b-laundry-charge"/>
+    <element xsi:type="archimate:BusinessObject" name="Open Account" id="b-open-account"/>
+    <element xsi:type="archimate:BusinessObject" name="Guest Reservation" id="b-guest-res"/>
+  </folder>
+  <folder name="Application" id="id-fa" type="application">
+    <element xsi:type="archimate:ApplicationComponent" name="WeWash Application" id="a-wewash-app"/>
+    <element xsi:type="archimate:ApplicationComponent" name="WeWash Platform" id="a-wewash-plat"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Hotel Management System" id="a-hms"/>
+    <element xsi:type="archimate:ApplicationInterface" name="WeWash App Interface" id="a-wewash-ui"/>
+    <element xsi:type="archimate:ApplicationInterface" name="Digital Machine Interface" id="a-machine-ui"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Check Machine Availability" id="a-check"/>
+    <element xsi:type="archimate:ApplicationProcess" name="Assign Machine to Guest" id="a-assign"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Manage Waiting List" id="a-waitlist"/>
+    <element xsi:type="archimate:ApplicationProcess" name="Send Push Notification" id="a-push"/>
+    <element xsi:type="archimate:ApplicationProcess" name="Activate Machine" id="a-activate"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Calculate Laundry Cost" id="a-calc"/>
+    <element xsi:type="archimate:ApplicationProcess" name="Record Laundry Charge" id="a-record"/>
+    <element xsi:type="archimate:ApplicationProcess" name="Transfer Charge to HMS" id="a-transfer"/>
+    <element xsi:type="archimate:ApplicationProcess" name="Update Open Account" id="a-update-acct"/>
+    <element xsi:type="archimate:DataObject" name="Machine Availability Data" id="a-avail-data"/>
+    <element xsi:type="archimate:DataObject" name="Waiting List Data" id="a-waitlist-data"/>
+    <element xsi:type="archimate:DataObject" name="Laundry Reservation Data" id="a-res-data"/>
+    <element xsi:type="archimate:DataObject" name="Laundry Charge Data" id="a-charge-data"/>
+    <element xsi:type="archimate:DataObject" name="Open Account Data" id="a-acct-data"/>
+    <element xsi:type="archimate:DataObject" name="Push Notification" id="a-notif-data"/>
+  </folder>
+  <folder name="Technology &amp; Physical" id="id-ft" type="technology">
+    <element xsi:type="archimate:Node" name="WeWash Server" id="t-server"/>
+    <element xsi:type="archimate:Device" name="Washing Machine" id="t-washer"/>
+    <element xsi:type="archimate:Device" name="Door Card Reader" id="t-reader"/>
+    <element xsi:type="archimate:Device" name="Guest Smartphone" id="t-phone"/>
+    <element xsi:type="archimate:Device" name="Key Card" id="t-keycard"/>
+    <element xsi:type="archimate:CommunicationNetwork" name="Hotel Wi-Fi Network" id="t-wifi"/>
+    <element xsi:type="archimate:SystemSoftware" name="Door System Software" id="t-door-sw"/>
+    <element xsi:type="archimate:TechnologyFunction" name="RFID Access Verification" id="t-rfid"/>
+    <element xsi:type="archimate:TechnologyFunction" name="Door Unlocking" id="t-unlock"/>
+    <element xsi:type="archimate:TechnologyProcess" name="Machine Activation" id="t-mach-act"/>
+    <element xsi:type="archimate:TechnologyProcess" name="Washing Cycle Execution" id="t-wash-cycle"/>
+    <element xsi:type="archimate:TechnologyService" name="Wi-Fi Data Transmission" id="t-wifi-svc"/>
+    <element xsi:type="archimate:Artifact" name="Key Card Access Rights" id="t-access-rights"/>
+  </folder>
+  <folder name="Motivation" id="id-fm" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-fi" type="implementation_migration"/>
+  <folder name="Other" id="id-fo" type="other"/>
+  <folder name="Relations" id="id-fr" type="relations">
+    <!-- BUSINESS: Assignment -->
+    <element xsi:type="archimate:AssignmentRelationship" id="r-01" source="b-guest" target="b-submit"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="r-02" source="b-guest" target="b-select"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="r-03" source="b-guest" target="b-start"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="r-04" source="b-concierge" target="b-ext-clean"/>
+    <!-- BUSINESS: Realization -->
+    <element xsi:type="archimate:RealizationRelationship" id="r-05" source="b-submit" target="b-laundry-svc"/>
+    <element xsi:type="archimate:RealizationRelationship" id="r-06" source="b-select" target="b-laundry-svc"/>
+    <element xsi:type="archimate:RealizationRelationship" id="r-07" source="b-start" target="b-laundry-svc"/>
+    <!-- BUSINESS: Triggering -->
+    <element xsi:type="archimate:TriggeringRelationship" id="r-08" source="b-submit" target="b-select"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="r-09" source="b-select" target="b-start"/>
+    <!-- BUSINESS: Access -->
+    <element xsi:type="archimate:AccessRelationship" id="r-10" source="b-submit" target="b-laundry-res" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="r-11" source="b-select" target="b-wash-prog" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="r-12" source="b-ext-clean" target="b-open-account" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="r-13" source="b-ext-clean" target="b-guest-res" accessType="1"/>
+    <!-- APPLICATION: Composition (component contains its behavior - this creates the nesting) -->
+    <element xsi:type="archimate:CompositionRelationship" id="r-c1" source="a-wewash-app" target="a-check"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c2" source="a-wewash-app" target="a-assign"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c3" source="a-wewash-app" target="a-waitlist"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c4" source="a-wewash-app" target="a-push"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c5" source="a-wewash-app" target="a-activate"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c6" source="a-wewash-app" target="a-wewash-ui"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c7" source="a-wewash-plat" target="a-calc"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c8" source="a-wewash-plat" target="a-record"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c9" source="a-wewash-plat" target="a-transfer"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c10" source="a-hms" target="a-update-acct"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c11" source="a-hms" target="a-acct-data"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c12" source="a-wewash-plat" target="a-charge-data"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c13" source="a-wewash-app" target="a-avail-data"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c14" source="a-wewash-app" target="a-waitlist-data"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c15" source="a-wewash-app" target="a-res-data"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c16" source="a-wewash-app" target="a-notif-data"/>
+    <!-- APPLICATION: Triggering chain -->
+    <element xsi:type="archimate:TriggeringRelationship" name="[free]" id="r-25" source="a-check" target="a-assign"/>
+    <element xsi:type="archimate:TriggeringRelationship" name="[occupied]" id="r-26" source="a-check" target="a-waitlist"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="r-27" source="a-assign" target="a-push"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="r-28" source="a-push" target="a-activate"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="r-29" source="a-activate" target="a-calc"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="r-30" source="a-calc" target="a-record"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="r-31" source="a-record" target="a-transfer"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="r-32" source="a-transfer" target="a-update-acct"/>
+    <!-- APPLICATION: Access -->
+    <element xsi:type="archimate:AccessRelationship" id="r-33" source="a-check" target="a-avail-data" accessType="2"/>
+    <element xsi:type="archimate:AccessRelationship" id="r-34" source="a-assign" target="a-avail-data" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="r-35" source="a-waitlist" target="a-waitlist-data" accessType="3"/>
+    <element xsi:type="archimate:AccessRelationship" id="r-36" source="a-push" target="a-notif-data" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="r-37" source="a-record" target="a-charge-data" accessType="1"/>
+    <element xsi:type="archimate:AccessRelationship" id="r-38" source="a-update-acct" target="a-acct-data" accessType="1"/>
+    <!-- Flow -->
+    <element xsi:type="archimate:FlowRelationship" name="Laundry Charges" id="r-39" source="a-wewash-plat" target="a-hms"/>
+    <!-- CROSS-LAYER: App serves Business -->
+    <element xsi:type="archimate:ServingRelationship" id="r-40" source="a-wewash-ui" target="b-guest"/>
+    <element xsi:type="archimate:ServingRelationship" id="r-41" source="a-wewash-app" target="b-submit"/>
+    <element xsi:type="archimate:ServingRelationship" id="r-42" source="a-machine-ui" target="b-start"/>
+    <element xsi:type="archimate:ServingRelationship" id="r-43" source="a-hms" target="b-open-account"/>
+    <!-- CROSS-LAYER: Data realizes Business Object -->
+    <element xsi:type="archimate:RealizationRelationship" id="r-44" source="a-res-data" target="b-laundry-res"/>
+    <element xsi:type="archimate:RealizationRelationship" id="r-45" source="a-charge-data" target="b-laundry-charge"/>
+    <element xsi:type="archimate:RealizationRelationship" id="r-46" source="a-acct-data" target="b-open-account"/>
+    <!-- CROSS-LAYER: Tech serves App -->
+    <element xsi:type="archimate:ServingRelationship" id="r-47" source="t-server" target="a-wewash-plat"/>
+    <element xsi:type="archimate:ServingRelationship" id="r-48" source="t-wifi" target="a-wewash-plat"/>
+    <element xsi:type="archimate:ServingRelationship" id="r-49" source="t-wifi" target="a-hms"/>
+    <element xsi:type="archimate:ServingRelationship" id="r-50" source="t-washer" target="a-activate"/>
+    <element xsi:type="archimate:ServingRelationship" id="r-51" source="t-phone" target="a-wewash-app"/>
+    <element xsi:type="archimate:ServingRelationship" id="r-52" source="t-reader" target="t-door-sw"/>
+    <element xsi:type="archimate:ServingRelationship" id="r-57" source="t-wifi" target="a-transfer"/>
+    <!-- TECHNOLOGY: Composition (Door System Software contains its functions) -->
+    <element xsi:type="archimate:CompositionRelationship" id="r-c17" source="t-door-sw" target="t-rfid"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c18" source="t-door-sw" target="t-unlock"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c19" source="t-washer" target="t-mach-act"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c20" source="t-washer" target="t-wash-cycle"/>
+    <element xsi:type="archimate:CompositionRelationship" id="r-c21" source="t-wifi" target="t-wifi-svc"/>
+    <!-- TECHNOLOGY: Triggering & Access -->
+    <element xsi:type="archimate:TriggeringRelationship" id="r-55" source="t-rfid" target="t-unlock"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="r-56b" source="t-mach-act" target="t-wash-cycle"/>
+    <element xsi:type="archimate:AccessRelationship" id="r-56" source="t-rfid" target="t-access-rights" accessType="2"/>
+    <element xsi:type="archimate:FlowRelationship" id="r-58" source="t-keycard" target="t-reader"/>
+  </folder>
+  <folder name="Views" id="id-fv" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="F3 Detailed - Laundry Service (Nested)" id="view-laundry">
+      <!-- =============== BUSINESS LAYER y=24..400 =============== -->
+      <child xsi:type="archimate:DiagramObject" id="v-01" targetConnections="vc-40" archimateElement="b-guest">
+        <bounds x="36" y="72" width="130" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-01" source="v-01" target="v-05" archimateRelationship="r-01"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-02" source="v-01" target="v-06" archimateRelationship="r-02"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-03" source="v-01" target="v-07" archimateRelationship="r-03"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="v-02" archimateElement="b-concierge">
+        <bounds x="36" y="312" width="130" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-04" source="v-02" target="v-08" archimateRelationship="r-04"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="v-03" targetConnections="vc-05 vc-06 vc-07" archimateElement="b-laundry-svc">
+        <bounds x="396" y="12" width="180" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="v-05" targetConnections="vc-01" archimateElement="b-submit">
+        <bounds x="216" y="96" width="160" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-05" source="v-05" target="v-03" archimateRelationship="r-05"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-08" source="v-05" target="v-06" archimateRelationship="r-08"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-10" source="v-05" target="v-10" archimateRelationship="r-10"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="v-06" targetConnections="vc-02 vc-08" archimateElement="b-select">
+        <bounds x="420" y="96" width="160" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-06" source="v-06" target="v-03" archimateRelationship="r-06"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-09" source="v-06" target="v-07" archimateRelationship="r-09"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-11" source="v-06" target="v-11" archimateRelationship="r-11"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="v-07" targetConnections="vc-03 vc-09" archimateElement="b-start">
+        <bounds x="624" y="96" width="160" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-07" source="v-07" target="v-03" archimateRelationship="r-07"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="v-08" targetConnections="vc-04" archimateElement="b-ext-clean">
+        <bounds x="216" y="312" width="170" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-12" source="v-08" target="v-14" archimateRelationship="r-12"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-13" source="v-08" target="v-15" archimateRelationship="r-13"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="v-10" targetConnections="vc-10 vc-44" archimateElement="b-laundry-res">
+        <bounds x="864" y="36" width="141" height="50"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="v-11" targetConnections="vc-11" archimateElement="b-wash-prog">
+        <bounds x="864" y="98" width="141" height="50"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="v-12" targetConnections="vc-45" archimateElement="b-laundry-charge">
+        <bounds x="864" y="160" width="141" height="50"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="v-14" targetConnections="vc-12 vc-43 vc-46" archimateElement="b-open-account">
+        <bounds x="864" y="222" width="141" height="50"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="v-15" targetConnections="vc-13" archimateElement="b-guest-res">
+        <bounds x="864" y="284" width="141" height="50"/>
+      </child>
+      <!-- =============== APPLICATION LAYER y=420..900 (NESTED) =============== -->
+      <!-- WeWash Application container with nested behavior + data -->
+      <child xsi:type="archimate:DiagramObject" id="v-20" archimateElement="a-wewash-app">
+        <bounds x="36" y="432" width="640" height="200"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-41" source="v-20" target="v-05" archimateRelationship="r-41"/>
+        <!-- nested children -->
+        <child xsi:type="archimate:DiagramObject" id="v-23" archimateElement="a-wewash-ui">
+          <bounds x="12" y="36" width="130" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-40" source="v-23" target="v-01" archimateRelationship="r-40"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="v-26" targetConnections="" archimateElement="a-check">
+          <bounds x="156" y="36" width="150" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-25" source="v-26" target="v-27" archimateRelationship="r-25"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-26" source="v-26" target="v-28" archimateRelationship="r-26"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-33" source="v-26" target="v-37" archimateRelationship="r-33"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="v-27" targetConnections="vc-25" archimateElement="a-assign">
+          <bounds x="318" y="36" width="150" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-27" source="v-27" target="v-29" archimateRelationship="r-27"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-34" source="v-27" target="v-37" archimateRelationship="r-34"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="v-28" targetConnections="vc-26" archimateElement="a-waitlist">
+          <bounds x="318" y="96" width="150" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-35" source="v-28" target="v-38" archimateRelationship="r-35"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="v-29" targetConnections="vc-27" archimateElement="a-push">
+          <bounds x="480" y="36" width="150" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-28" source="v-29" target="v-30" archimateRelationship="r-28"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-36" source="v-29" target="v-41d" archimateRelationship="r-36"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="v-30" targetConnections="vc-28" archimateElement="a-activate">
+          <bounds x="480" y="96" width="150" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-29" source="v-30" target="v-31" archimateRelationship="r-29"/>
+        </child>
+        <!-- nested data objects -->
+        <child xsi:type="archimate:DiagramObject" id="v-37" targetConnections="vc-33 vc-34" archimateElement="a-avail-data">
+          <bounds x="12" y="96" width="130" height="44"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="v-38" targetConnections="vc-35" archimateElement="a-waitlist-data">
+          <bounds x="12" y="148" width="130" height="44"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="v-39d" targetConnections="" archimateElement="a-res-data">
+          <bounds x="156" y="96" width="150" height="44"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-44" source="v-39d" target="v-10" archimateRelationship="r-44"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="v-41d" targetConnections="vc-36" archimateElement="a-notif-data">
+          <bounds x="480" y="148" width="150" height="44"/>
+        </child>
+      </child>
+      <!-- WeWash Platform container -->
+      <child xsi:type="archimate:DiagramObject" id="v-21" archimateElement="a-wewash-plat">
+        <bounds x="36" y="660" width="470" height="140"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-39" source="v-21" target="v-22" archimateRelationship="r-39"/>
+        <child xsi:type="archimate:DiagramObject" id="v-31" targetConnections="vc-29" archimateElement="a-calc">
+          <bounds x="12" y="36" width="140" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-30" source="v-31" target="v-32" archimateRelationship="r-30"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="v-32" targetConnections="vc-30" archimateElement="a-record">
+          <bounds x="164" y="36" width="140" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-31" source="v-32" target="v-33" archimateRelationship="r-31"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-37" source="v-32" target="v-40d" archimateRelationship="r-37"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="v-33" targetConnections="vc-31" archimateElement="a-transfer">
+          <bounds x="316" y="36" width="140" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-32" source="v-33" target="v-34" archimateRelationship="r-32"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="v-40d" targetConnections="vc-37" archimateElement="a-charge-data">
+          <bounds x="164" y="92" width="140" height="40"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-45" source="v-40d" target="v-12" archimateRelationship="r-45"/>
+        </child>
+      </child>
+      <!-- HMS container -->
+      <child xsi:type="archimate:DiagramObject" id="v-22" targetConnections="vc-39 vc-49" archimateElement="a-hms">
+        <bounds x="540" y="660" width="320" height="140"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-43" source="v-22" target="v-14" archimateRelationship="r-43"/>
+        <child xsi:type="archimate:DiagramObject" id="v-34" targetConnections="vc-32" archimateElement="a-update-acct">
+          <bounds x="12" y="36" width="150" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-38" source="v-34" target="v-41acct" archimateRelationship="r-38"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="v-41acct" targetConnections="vc-38" archimateElement="a-acct-data">
+          <bounds x="174" y="36" width="130" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-46" source="v-41acct" target="v-14" archimateRelationship="r-46"/>
+        </child>
+      </child>
+      <!-- Digital Machine Interface (separate, near tech) -->
+      <child xsi:type="archimate:DiagramObject" id="v-24" archimateElement="a-machine-ui">
+        <bounds x="690" y="672" width="150" height="50"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-42" source="v-24" target="v-07" archimateRelationship="r-42"/>
+      </child>
+      <!-- =============== TECHNOLOGY LAYER y=840+ (NESTED) =============== -->
+      <child xsi:type="archimate:DiagramObject" id="v-50" archimateElement="t-phone">
+        <bounds x="36" y="852" width="130" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-51" source="v-50" target="v-20" archimateRelationship="r-51"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="v-51" archimateElement="t-server">
+        <bounds x="180" y="852" width="130" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-47" source="v-51" target="v-21" archimateRelationship="r-47"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="v-54" archimateElement="t-keycard">
+        <bounds x="324" y="852" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-58" source="v-54" target="v-53" archimateRelationship="r-58"/>
+      </child>
+      <!-- Washing Machine container (nested tech behavior) -->
+      <child xsi:type="archimate:DiagramObject" id="v-52" archimateElement="t-washer">
+        <bounds x="36" y="936" width="380" height="130"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-50" source="v-52" target="v-30" archimateRelationship="r-50"/>
+        <child xsi:type="archimate:DiagramObject" id="v-60" archimateElement="t-mach-act">
+          <bounds x="12" y="36" width="160" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-56b" source="v-60" target="v-61" archimateRelationship="r-56b"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="v-61" targetConnections="vc-56b" archimateElement="t-wash-cycle">
+          <bounds x="190" y="36" width="170" height="48"/>
+        </child>
+      </child>
+      <!-- Door System Software container (nested tech behavior) -->
+      <child xsi:type="archimate:DiagramObject" id="v-57" targetConnections="vc-52" archimateElement="t-door-sw">
+        <bounds x="450" y="936" width="410" height="130"/>
+        <child xsi:type="archimate:DiagramObject" id="v-58t" archimateElement="t-rfid">
+          <bounds x="12" y="36" width="170" height="48"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-55" source="v-58t" target="v-59" archimateRelationship="r-55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="vc-56" source="v-58t" target="v-63" archimateRelationship="r-56"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="v-59" targetConnections="vc-55" archimateElement="t-unlock">
+          <bounds x="200" y="36" width="150" height="48"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="v-63" targetConnections="vc-56" archimateElement="t-access-rights">
+          <bounds x="200" y="92" width="150" height="40"/>
+        </child>
+      </child>
+      <!-- Door Card Reader -->
+      <child xsi:type="archimate:DiagramObject" id="v-53" targetConnections="vc-58" archimateElement="t-reader">
+        <bounds x="450" y="852" width="130" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-52" source="v-53" target="v-57" archimateRelationship="r-52"/>
+      </child>
+      <!-- Wi-Fi Network container (nested service) -->
+      <child xsi:type="archimate:DiagramObject" id="v-55" archimateElement="t-wifi">
+        <bounds x="600" y="852" width="260" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-48" source="v-55" target="v-21" archimateRelationship="r-48"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-49" source="v-55" target="v-22" archimateRelationship="r-49"/>
+        <sourceConnection xsi:type="archimate:Connection" id="vc-57" source="v-55" target="v-33" archimateRelationship="r-57"/>
+        <child xsi:type="archimate:DiagramObject" id="v-62" archimateElement="t-wifi-svc">
+          <bounds x="120" y="4" width="130" height="44"/>
+        </child>
+      </child>
+    </element>
+  </folder>
+</archimate:model>
