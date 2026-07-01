@@ -4,23 +4,23 @@
   <folder name="Business" id="id-486f2acd739d436f96fa22ac1e1b686b" type="business">
     <element xsi:type="archimate:BusinessRole" name="Concierge" id="id-4d221a62d6024cddbe75825826447d46"/>
     <element xsi:type="archimate:BusinessActor" name="External Cleaning Service " id="id-a2314879bcdf4781b3409e8d0b61a31b"/>
-    <element xsi:type="archimate:BusinessProcess" name="Address Special Requests by Guests" id="id-841e84c8b1594a149b1c817ed8aa5eee"/>
-    <element xsi:type="archimate:BusinessProcess" name="Special Request handling" id="id-ba00efa1318c46c5a46beb144896aee2"/>
-    <element xsi:type="archimate:BusinessService" name="Laundry Service" id="id-81b7916b51fa40cdb005450f739fe725"/>
-    <element xsi:type="archimate:BusinessService" name="Transfer Service" id="id-4bbac0b7e22f4210903482e757905ba0"/>
+    <element xsi:type="archimate:BusinessProcess" name="Address Special Requests" id="id-841e84c8b1594a149b1c817ed8aa5eee"/>
+    <element xsi:type="archimate:BusinessProcess" name="Handle Special Requests" id="id-ba00efa1318c46c5a46beb144896aee2"/>
     <element xsi:type="archimate:BusinessObject" name="Briefing Report" id="id-fb859793bbac4d78aee5231db9bde564"/>
-    <element xsi:type="archimate:BusinessObject" name="Special Requests" id="id-a2e665b32e9a42328c5fd198969f6549"/>
+    <element xsi:type="archimate:BusinessObject" name="Special Request" id="id-a2e665b32e9a42328c5fd198969f6549"/>
     <element xsi:type="archimate:BusinessObject" name="Transfer Arrangements" id="id-f0bd505078714e08b3eff3a79e7bf5aa"/>
     <element xsi:type="archimate:BusinessRole" name="Guest" id="id-503b58776c974a23bb86049521a72635"/>
     <element xsi:type="archimate:BusinessObject" name="Guest Reservation" id="id-1fcda5b4164d496da1272d18b933cc7c"/>
-    <element xsi:type="archimate:BusinessProcess" name="Exceptional External Cleaning Process" id="id-d3e40ff8dc544632823cea478081d262"/>
-    <element xsi:type="archimate:BusinessProcess" name="Fulfill In-House Requests (Standard &amp; VIP)" id="id-2034fb33b40248e190439fcbe50fd7f1">
+    <element xsi:type="archimate:BusinessProcess" name="Handle External Cleaning Fallback" id="id-d3e40ff8dc544632823cea478081d262"/>
+    <element xsi:type="archimate:BusinessProcess" name="Fulfill In-House Requests" id="id-2034fb33b40248e190439fcbe50fd7f1">
       <documentation>Handles internal fulfillment of in-room setups, amenities, and special preferences for both standard guests (e.g., extra pillows, late check-out) and VIP guests (e.g., complimentary champagne, fruit platters) prior to or during their stay.</documentation>
     </element>
     <element xsi:type="archimate:BusinessObject" name="Open Account" id="id-2958c694cef84d9bb102c5bf41cf6e05">
       <documentation>Conceptual operational ledger used by the hotel staff to track charges associated with a guest's stay</documentation>
     </element>
-    <element xsi:type="archimate:BusinessService" name="Laundry Service" id="id-2c4f6f52977b480fb5b7fdf5304b1c7b"/>
+    <element xsi:type="archimate:BusinessService" name="Laundry Service" id="id-2c4f6f52977b480fb5b7fdf5304b1c7b">
+      <documentation>Verb + Noun should be Laundry Handling but Laundry Service is used in source material so Laundry Service is being used as the preferred version right now.</documentation>
+    </element>
     <element xsi:type="archimate:BusinessProcess" name="Submit Laundry Reservation" id="id-f7a7731c4c02430aa89f275d63f0db26"/>
     <element xsi:type="archimate:BusinessProcess" name="Select Washing Program" id="id-c49fa088eea24f58877863cb2fd0b20f"/>
     <element xsi:type="archimate:BusinessProcess" name="Start Washing Machine" id="id-16dbcf60457049a3abf4a36c665ed9c5"/>
@@ -29,23 +29,23 @@
     <element xsi:type="archimate:BusinessObject" name="Laundry Charge" id="id-aa67a27adfdf4070b64ffb066a08b117">
       <documentation>is this necessary???</documentation>
     </element>
-    <element xsi:type="archimate:BusinessProcess" name="Arrange External Cleaning (fallback)" id="id-35fc7fab541b438a9a2f5dddd316eb95"/>
+    <element xsi:type="archimate:BusinessProcess" name="Arrange External Cleaning" id="id-35fc7fab541b438a9a2f5dddd316eb95"/>
     <element xsi:type="archimate:BusinessProcess" name="Arrange Transfer" id="id-7bd5dd20da344f608a949a77df509959"/>
     <element xsi:type="archimate:BusinessProcess" name="Request Transfer" id="id-42ebf9c8da8b479d89d3529c4f3b35b8"/>
     <element xsi:type="archimate:BusinessRole" name="Driver" id="id-3624107a29a64bc4bcf6a1623031fea1"/>
     <element xsi:type="archimate:BusinessProcess" name="Drive Guest" id="id-554b147005eb4670bea4288f2789bcce"/>
-    <element xsi:type="archimate:BusinessProcess" name="Concierge Transfer Fulfillment" id="id-794034721ce24b3aa9a53f70e8d02b9e"/>
+    <element xsi:type="archimate:BusinessProcess" name="Fulfill Transfer by Concierge" id="id-794034721ce24b3aa9a53f70e8d02b9e"/>
     <element xsi:type="archimate:BusinessObject" name="Pickup Details" id="id-e6faa4a4455b4f739cee449c44c210c0"/>
-    <element xsi:type="archimate:BusinessProcess" name="Driver Availability Registration" id="id-f3407836afe244edb80383ee40e241ff"/>
+    <element xsi:type="archimate:BusinessProcess" name="Register Driver Availability" id="id-f3407836afe244edb80383ee40e241ff"/>
     <element xsi:type="archimate:BusinessService" name="Transfer Service" id="id-7eac31f183084d55a98b82fc61348d9f"/>
   </folder>
   <folder name="Application" id="id-70b47308177c4dceaabceb77a3611b17" type="application">
     <element xsi:type="archimate:ApplicationProcess" name="Add Services to Reservation" id="id-abe32fc1142143a29e997bd91db1be77"/>
-    <element xsi:type="archimate:DataObject" name="Special Requests" id="id-91986f7d113d40f99cfee487c15174b2"/>
+    <element xsi:type="archimate:DataObject" name="Special Request Data" id="id-91986f7d113d40f99cfee487c15174b2"/>
     <element xsi:type="archimate:ApplicationComponent" name="External Booking Platform" id="id-a0b6fb2dd9a14071a3679b751fbc2500"/>
     <element xsi:type="archimate:DataObject" name="Guess Reservation" id="id-9bb43fc665d94db1b56f94b59847f368"/>
-    <element xsi:type="archimate:ApplicationFunction" name="Display Briefing Report" id="id-feae05fe6e0e4f5f862b8aa4f02d87c3"/>
-    <element xsi:type="archimate:DataObject" name="Open Account" id="id-5b0f197ef5f64c1a8e9067f71e6610e6">
+    <element xsi:type="archimate:ApplicationFunction" name="Displaying Briefing Report" id="id-feae05fe6e0e4f5f862b8aa4f02d87c3"/>
+    <element xsi:type="archimate:DataObject" name="Open Account Data" id="id-5b0f197ef5f64c1a8e9067f71e6610e6">
       <documentation>The physical database structure or schema inside the Hotel Management System (HMS) where financial transactions are stored digitally.&#xD;
 &#xD;
 Internal Memo Section: Mentioned in the context of reservation handling, upgrades, and room check-outs where outstanding costs are processed and updated automatically.&#xD;
@@ -59,58 +59,58 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
       <documentation>Everything is displayed on the staff portal dashboard for the employees to see.</documentation>
     </element>
     <element xsi:type="archimate:ApplicationComponent" name="Hotel Management System (HMS)" id="id-9394ba3905cb472f93fb22d1048223de"/>
-    <element xsi:type="archimate:ApplicationFunction" name="Update Associated Costs Automatically" id="id-60f3bf954e9f4dfda68a022a44910cf9">
+    <element xsi:type="archimate:ApplicationFunction" name="Updating Associated Costs" id="id-60f3bf954e9f4dfda68a022a44910cf9">
       <documentation>Monitors modifications to the reservation and performs a Write Access connection down into the Open Account data object</documentation>
     </element>
-    <element xsi:type="archimate:ApplicationFunction" name="Generate Briefing Report" id="id-c1b076f96f0746c7aae77ae2abddff16">
+    <element xsi:type="archimate:ApplicationFunction" name="Generating Briefing Report" id="id-c1b076f96f0746c7aae77ae2abddff16">
       <documentation>Automatically compiles daily operations across multiple departments and runs a background Read Access query against active Special Request data objects.</documentation>
     </element>
     <element xsi:type="archimate:ApplicationComponent" name="Transfer Management System (TMS) " id="id-f61e50c70b3242729d70190eafccd721"/>
-    <element xsi:type="archimate:DataObject" name="Transfer Schedule" id="id-10842d3b142f4146a453404b7937cab6">
+    <element xsi:type="archimate:DataObject" name="Transfer Schedule Data" id="id-10842d3b142f4146a453404b7937cab6">
       <documentation>Tracks real-time active transit timelines.</documentation>
     </element>
-    <element xsi:type="archimate:ApplicationFunction" name="Match Requests with Vehicle" id="id-a116ebf3ed1b4de586ad79ed7e205248">
+    <element xsi:type="archimate:ApplicationFunction" name="Matching Requests with Vehicle" id="id-a116ebf3ed1b4de586ad79ed7e205248">
       <documentation>An algorithmic capability evaluating passenger counts, car capacity, and luggage space to determine the best fleet options.</documentation>
     </element>
-    <element xsi:type="archimate:ApplicationProcess" name="Submit Transfer Requests" id="id-289c5ed0b90645a2a189691273cff66b">
+    <element xsi:type="archimate:ApplicationProcess" name="Submit Transfer Request" id="id-289c5ed0b90645a2a189691273cff66b">
       <documentation>Handles the initial ingestion of transfer parameters from the concierge client.</documentation>
     </element>
     <element xsi:type="archimate:ApplicationComponent" name="WeWash External Platform" id="id-a859d7dcff9c4a769c340fc4225a0f68"/>
     <element xsi:type="archimate:ApplicationProcess" name="Transfer Laundry Charges to HMS " id="id-9a5e7c9827b04398a7e8bee3393f559d"/>
-    <element xsi:type="archimate:DataObject" name="Briefing Report" id="id-8798cf68cf0342fe8759e32bf5b23f7e">
+    <element xsi:type="archimate:DataObject" name="Briefing Report Data" id="id-8798cf68cf0342fe8759e32bf5b23f7e">
       <documentation>Which is constantly being updated showcasing the current status of each task, not just an initial report of the days task.</documentation>
     </element>
     <element xsi:type="archimate:ApplicationComponent" name="WeWash Application" id="id-46ad2e6a06e34753964d9c976b82c29f"/>
     <element xsi:type="archimate:ApplicationInterface" name="WeWash App Interface" id="id-405d535cc8754b348857f566b5edbdb2"/>
-    <element xsi:type="archimate:ApplicationFunction" name="Check Machine Availability" id="id-2174a68731074f739ce68fa66204930c"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Checking Machine Availability" id="id-2174a68731074f739ce68fa66204930c"/>
     <element xsi:type="archimate:ApplicationProcess" name="Assign Machine to Guest" id="id-46b521373c674b4885ee0331016132b0"/>
-    <element xsi:type="archimate:ApplicationFunction" name="Manage Waiting List" id="id-d23ab7e60bc74cdf85697ce5526d6b20"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Managing Waiting List" id="id-d23ab7e60bc74cdf85697ce5526d6b20"/>
     <element xsi:type="archimate:ApplicationProcess" name="Send Push Notification" id="id-ce425d45f77f4739b07ecd55d4f2b11c"/>
     <element xsi:type="archimate:ApplicationProcess" name="Activate Machine" id="id-66f4db66cf2b4faab1980052e326e0f1"/>
     <element xsi:type="archimate:DataObject" name="Machine Availability Data" id="id-52d595d3f84b48a681ec115d9fe7d62b"/>
     <element xsi:type="archimate:DataObject" name="Waiting List Data" id="id-8b6ec1c9cfc840c68eb19dae00fd6720"/>
     <element xsi:type="archimate:DataObject" name="Push Notification" id="id-8b415b867c0f4ef48796cb883e247b95"/>
     <element xsi:type="archimate:ApplicationComponent" name="WeWash Platform" id="id-ab4eaa086dc841a49e6202ec8fa388b4"/>
-    <element xsi:type="archimate:ApplicationFunction" name="Calculate Laundry Cost" id="id-f86b2a92c18c44ee9b45c01bfd4d975f"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Calculating Laundry Cost" id="id-f86b2a92c18c44ee9b45c01bfd4d975f"/>
     <element xsi:type="archimate:ApplicationProcess" name="Record Laundry Charge" id="id-4daab7d699974f0180c42eb883190dd2"/>
-    <element xsi:type="archimate:ApplicationProcess" name="Transfer Charge to HMS" id="id-b7fe8076ba6d441b9bc938545bf5843b"/>
+    <element xsi:type="archimate:ApplicationProcess" name="Send Laundry Charge to HMS" id="id-b7fe8076ba6d441b9bc938545bf5843b"/>
     <element xsi:type="archimate:DataObject" name="Laundry Charge Data" id="id-d5af7d74a8af412cb280ab5aaa094205"/>
     <element xsi:type="archimate:ApplicationInterface" name="Digital Washing Machine Interface" id="id-9cca9856cd5f445fbcbcb36f9004d473">
       <documentation>is there a physical interface on the washing machine, does it change the process? to be further determined</documentation>
     </element>
-    <element xsi:type="archimate:ApplicationFunction" name="Assign Driver" id="id-dfb56aecfe78425087a1fa6bf98b264c"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Assigning Driver" id="id-dfb56aecfe78425087a1fa6bf98b264c"/>
     <element xsi:type="archimate:ApplicationProcess" name="Update Transfer Schedule" id="id-31201f39fcec4f28ba895da342676a53"/>
-    <element xsi:type="archimate:ApplicationFunction" name="Calculate Transfer Fee" id="id-90a7e0efa0fe4400824c72692a50c69e"/>
-    <element xsi:type="archimate:ApplicationProcess" name="Transfer Charge to HMS" id="id-e5618d350e24484e8ba31c2262173616"/>
-    <element xsi:type="archimate:DataObject" name="Driver &amp; Vehicle Data" id="id-d98fe63efbec4360b81a8d2a4a3415b8"/>
-    <element xsi:type="archimate:ApplicationProcess" name="Notify Driver Automatically" id="id-adaadfd0120149e4be5c5fdd5b9bcbcb"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Calculating Transfer Fee" id="id-90a7e0efa0fe4400824c72692a50c69e"/>
+    <element xsi:type="archimate:ApplicationProcess" name="Send Transfer Charge to HMS" id="id-e5618d350e24484e8ba31c2262173616"/>
+    <element xsi:type="archimate:DataObject" name="Driver and Vehicle Data" id="id-d98fe63efbec4360b81a8d2a4a3415b8"/>
+    <element xsi:type="archimate:ApplicationProcess" name="Notify Driver" id="id-adaadfd0120149e4be5c5fdd5b9bcbcb"/>
     <element xsi:type="archimate:ApplicationProcess" name="Confirm Transfer as Additional Service" id="id-46a44533c79649108b269eb1370d44bc"/>
     <element xsi:type="archimate:ApplicationComponent" name="External Car Booking Platform" id="id-4323ca84c9d6454791d1845c08941050">
       <documentation>																							</documentation>
     </element>
     <element xsi:type="archimate:ApplicationProcess" name="Connect to External Car Booking Platform" id="id-daca70b914674e3ea2e3cbe7235697d0"/>
     <element xsi:type="archimate:DataObject" name="Transfer Request Data" id="id-ad68a848bd4245d79cbb871258b0d37f"/>
-    <element xsi:type="archimate:ApplicationProcess" name="Update Request Status" id="id-6b2d4881947c47f885dc03fdca304e2e"/>
+    <element xsi:type="archimate:ApplicationProcess" name="Update Special Request Status" id="id-6b2d4881947c47f885dc03fdca304e2e"/>
   </folder>
   <folder name="Technology &amp; Physical" id="id-cadf53a747e64a7db56b107538a8d64d" type="technology">
     <element xsi:type="archimate:Device" name="Staff Smartphone" id="id-186c8f3fd04743c3bece4e1e70d60894"/>
@@ -126,12 +126,12 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
     <element xsi:type="archimate:Node" name="Central Server" id="id-112aba1b7d8247e6bbc59e50317b1965">
       <documentation>This is the primary cloud-based backend hardware engine for the hotel. It provides the core compute power, processing memory, and database storage needed to run the logical modules of the Hotel Management System (HMS Core Engine) and the Transfer Management System (TMS).</documentation>
     </element>
-    <element xsi:type="archimate:Device" name="Washing Machine / Integrated Washer-Dryer" id="id-24ec606f3ad0478ab82ae4ded7e2870b"/>
+    <element xsi:type="archimate:Device" name="Washing Machine" id="id-24ec606f3ad0478ab82ae4ded7e2870b"/>
     <element xsi:type="archimate:Device" name="Key Card" id="id-12c1b3e29d824693a9ea2f6a99c7ea71"/>
     <element xsi:type="archimate:Device" name="Door Card Reader" id="id-954b5ed618c044e0974db67bc19d689a"/>
     <element xsi:type="archimate:SystemSoftware" name="Door System Software" id="id-3f066ab39d1945aab05ea43f989d3ddb"/>
-    <element xsi:type="archimate:TechnologyFunction" name="RFID Access Verification" id="id-37aa2bb5ffe641198fdc67972d96f068"/>
-    <element xsi:type="archimate:TechnologyFunction" name="Door Unlocking" id="id-46ec139b0aca45439bca012e8902fed0"/>
+    <element xsi:type="archimate:TechnologyFunction" name="Verifying RFID Access" id="id-37aa2bb5ffe641198fdc67972d96f068"/>
+    <element xsi:type="archimate:TechnologyFunction" name="Unlocking Door " id="id-46ec139b0aca45439bca012e8902fed0"/>
     <element xsi:type="archimate:Device" name="Guest Smartphone" id="id-3c51bf49e43248ac886619ae27654ae6"/>
   </folder>
   <folder name="Motivation" id="id-3c8f0fc9d99e484a9b8061c2a8b758e7" type="motivation"/>
@@ -139,9 +139,9 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
     <element xsi:type="archimate:Deliverable" name="Deliverable" id="id-9795c7c8bb054cb28678285d0ab60d39"/>
   </folder>
   <folder name="Other" id="id-b3e2ff14d2c14628a233d815b3da326a" type="other">
-    <element xsi:type="archimate:Junction" name="Junction" id="id-8308967dde2d433d93d0e768b3a9c568" type="or"/>
-    <element xsi:type="archimate:Junction" name="Junction Transfer 1" id="id-4b93fa91e402471dacba49f1872ca866" type="or"/>
-    <element xsi:type="archimate:Junction" name="Junction Transfer 2" id="id-c3b7752a41144662a20ef68994f940eb" type="or"/>
+    <element xsi:type="archimate:Junction" name="Service Choice Junction" id="id-8308967dde2d433d93d0e768b3a9c568" type="or"/>
+    <element xsi:type="archimate:Junction" name="Vehicle Availability Junction" id="id-4b93fa91e402471dacba49f1872ca866" type="or"/>
+    <element xsi:type="archimate:Junction" name="Driver Notification Junction" id="id-c3b7752a41144662a20ef68994f940eb" type="or"/>
   </folder>
   <folder name="Relations" id="id-b49e4c4e575a4183ad439c61a7217010" type="relations">
     <element xsi:type="archimate:TriggeringRelationship" id="id-7f9b16234d024017adcd6a37e9c42545" source="id-841e84c8b1594a149b1c817ed8aa5eee" target="id-ba00efa1318c46c5a46beb144896aee2"/>
@@ -173,8 +173,6 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
     <element xsi:type="archimate:AccessRelationship" id="id-c0ff40bd5c164b54a8c0706de06dc2ca" source="id-9394ba3905cb472f93fb22d1048223de" target="id-8798cf68cf0342fe8759e32bf5b23f7e"/>
     <element xsi:type="archimate:AccessRelationship" name="Write" id="id-61d62f952a924868b7fd616c8045e737" source="id-c1b076f96f0746c7aae77ae2abddff16" target="id-8798cf68cf0342fe8759e32bf5b23f7e"/>
     <element xsi:type="archimate:RealizationRelationship" name="Realizes" id="id-90b35d77e27a4abc98caf12d426e2696" source="id-8798cf68cf0342fe8759e32bf5b23f7e" target="id-fb859793bbac4d78aee5231db9bde564"/>
-    <element xsi:type="archimate:TriggeringRelationship" id="id-3a0dff6d1a8348bd802887651216e5c9" source="id-8308967dde2d433d93d0e768b3a9c568" target="id-4bbac0b7e22f4210903482e757905ba0"/>
-    <element xsi:type="archimate:TriggeringRelationship" id="id-eee5ca7a643e471cb6bbf6acace6081c" source="id-8308967dde2d433d93d0e768b3a9c568" target="id-81b7916b51fa40cdb005450f739fe725"/>
     <element xsi:type="archimate:TriggeringRelationship" id="id-c1b898e3745647b0994a3dfab88957c0" source="id-ba00efa1318c46c5a46beb144896aee2" target="id-8308967dde2d433d93d0e768b3a9c568"/>
     <element xsi:type="archimate:AssignmentRelationship" id="id-ccbb7d65354d4310ab3e2457a723ce2f" source="id-4d221a62d6024cddbe75825826447d46" target="id-841e84c8b1594a149b1c817ed8aa5eee"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-4b579c2124714cd4a1d9544311b1914d" source="id-5b0f197ef5f64c1a8e9067f71e6610e6" target="id-2958c694cef84d9bb102c5bf41cf6e05"/>
@@ -192,7 +190,6 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
     <element xsi:type="archimate:TriggeringRelationship" id="id-658873d68a72454b9cc88c1c319fd519" source="id-f7a7731c4c02430aa89f275d63f0db26" target="id-c49fa088eea24f58877863cb2fd0b20f"/>
     <element xsi:type="archimate:AccessRelationship" id="id-0ecd4e08379b405b8b73816b010bc9d7" source="id-f7a7731c4c02430aa89f275d63f0db26" target="id-380713f300454429824fba34956cad34"/>
     <element xsi:type="archimate:AccessRelationship" id="id-b97629e8b5be4c488abf03267d25a21c" source="id-c49fa088eea24f58877863cb2fd0b20f" target="id-6428e03172e64b21aac2290eafe6c0d4"/>
-    <element xsi:type="archimate:TriggeringRelationship" id="id-db8f8361b3d44f3bb6679b63f0a2cd9a" source="id-81b7916b51fa40cdb005450f739fe725" target="id-f7a7731c4c02430aa89f275d63f0db26"/>
     <element xsi:type="archimate:TriggeringRelationship" id="id-7a7eb917a7ea45c9af14b3aa84fc7b22" source="id-d3e40ff8dc544632823cea478081d262" target="id-35fc7fab541b438a9a2f5dddd316eb95"/>
     <element xsi:type="archimate:AccessRelationship" id="id-50ab4cdfbb7c4a50b2f0d7149a7cf3db" source="id-35fc7fab541b438a9a2f5dddd316eb95" target="id-2958c694cef84d9bb102c5bf41cf6e05"/>
     <element xsi:type="archimate:TriggeringRelationship" id="id-9e929ccf794a480f9f0333bc091d644d" source="id-46b521373c674b4885ee0331016132b0" target="id-ce425d45f77f4739b07ecd55d4f2b11c"/>
@@ -266,13 +263,14 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
     <element xsi:type="archimate:RealizationRelationship" id="id-edb940f5fe0c48acbf180b38d11477e5" source="id-554b147005eb4670bea4288f2789bcce" target="id-7eac31f183084d55a98b82fc61348d9f"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-8711b3c0b58f431ba3dca9e8290f3337" source="id-794034721ce24b3aa9a53f70e8d02b9e" target="id-7eac31f183084d55a98b82fc61348d9f"/>
     <element xsi:type="archimate:AccessRelationship" id="id-736a46097eb3490d8aa705c51f3aeff6" source="id-7eac31f183084d55a98b82fc61348d9f" target="id-e6faa4a4455b4f739cee449c44c210c0"/>
-    <element xsi:type="archimate:TriggeringRelationship" id="id-89738f5896d7490382228027d20d1578" source="id-4bbac0b7e22f4210903482e757905ba0" target="id-42ebf9c8da8b479d89d3529c4f3b35b8"/>
     <element xsi:type="archimate:ServingRelationship" id="id-2bc8ccb8318649f2babada6b6e671d29" source="id-3c51bf49e43248ac886619ae27654ae6" target="id-503b58776c974a23bb86049521a72635"/>
     <element xsi:type="archimate:ServingRelationship" id="id-c8057452191a48daa2b8e7070ddb6da3" source="id-3c51bf49e43248ac886619ae27654ae6" target="id-405d535cc8754b348857f566b5edbdb2"/>
     <element xsi:type="archimate:AssignmentRelationship" id="id-7414f2f3199c4907bf44d54ced13c7d0" source="id-cadf5b6d698f43158a9a8e97077c0763" target="id-6b2d4881947c47f885dc03fdca304e2e"/>
     <element xsi:type="archimate:AccessRelationship" id="id-54537fe611af4ba18b1073819d0e8836" source="id-6b2d4881947c47f885dc03fdca304e2e" target="id-91986f7d113d40f99cfee487c15174b2"/>
     <element xsi:type="archimate:ServingRelationship" id="id-065d24c55a7e45f5a4fd5a95be564c83" source="id-186c8f3fd04743c3bece4e1e70d60894" target="id-4d221a62d6024cddbe75825826447d46"/>
     <element xsi:type="archimate:ServingRelationship" id="id-e656d18cd57d4f42bc6ae7b0e3eee836" source="id-6b2d4881947c47f885dc03fdca304e2e" target="id-841e84c8b1594a149b1c817ed8aa5eee"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-6138248583834764a08a4fb2bffb7db3" source="id-8308967dde2d433d93d0e768b3a9c568" target="id-f7a7731c4c02430aa89f275d63f0db26"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-1b11c7ac0c00473b984c0aba2dce42a8" source="id-8308967dde2d433d93d0e768b3a9c568" target="id-42ebf9c8da8b479d89d3529c4f3b35b8"/>
   </folder>
   <folder name="Views" id="id-753bebf16354419ba6d43b78d3fcd4c5" type="diagrams">
     <element xsi:type="archimate:ArchimateDiagramModel" name="Overall View" id="id-412fc11283a840cca59cd3f77001a055">
@@ -304,16 +302,6 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
           <bounds x="48" y="24" width="144" height="61"/>
         </child>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-b936aea1e8cf41309055bfbf02ee8ca6" targetConnections="id-4d69c34376f949f88f711eceb575f2fe" archimateElement="id-81b7916b51fa40cdb005450f739fe725">
-        <bounds x="972" y="504" width="144" height="72"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-c84f0e6772b345feaae3b46063943df8" source="id-b936aea1e8cf41309055bfbf02ee8ca6" target="id-a1f2729cc4b345ec80373fb2bacf1722" archimateRelationship="id-db8f8361b3d44f3bb6679b63f0a2cd9a"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-5a48b6cdfc32450ca2bdd5f1edfe7b6a" targetConnections="id-103f2ec6ec114a26bd243eb2332c4407" archimateElement="id-4bbac0b7e22f4210903482e757905ba0">
-        <bounds x="966" y="312" width="158" height="55"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-92b738f2118e43249163e3c8054db644" source="id-5a48b6cdfc32450ca2bdd5f1edfe7b6a" target="id-8e3d5ebd505d46848d568ec406d0e468" archimateRelationship="id-89738f5896d7490382228027d20d1578">
-          <bendpoint startX="36" startY="-86" endX="-240" endY="-2"/>
-        </sourceConnection>
-      </child>
       <child xsi:type="archimate:DiagramObject" id="id-ac9ad785967642749ae1a6d221a966fb" targetConnections="id-e96669353e824b5d88e17d98d169cc52 id-8001bfaf6dd64a58996688d04e53c7f8" archimateElement="id-fb859793bbac4d78aee5231db9bde564">
         <bounds x="516" y="317" width="144" height="72"/>
       </child>
@@ -337,10 +325,10 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
         <sourceConnection xsi:type="archimate:Connection" id="id-d9ec3d51ddcc47929ba787d1846a5b51" source="id-20678216020043e88bc4136ba1d70d28" target="id-d6413178d8d24c439c22106075078d55" archimateRelationship="id-f71d930a813d42bb86a6a8521ecbcce8">
           <bendpoint startX="2" startY="242" endX="-336" endY="6"/>
         </sourceConnection>
-        <sourceConnection xsi:type="archimate:Connection" id="id-103f2ec6ec114a26bd243eb2332c4407" source="id-20678216020043e88bc4136ba1d70d28" target="id-5a48b6cdfc32450ca2bdd5f1edfe7b6a" archimateRelationship="id-3a0dff6d1a8348bd802887651216e5c9">
-          <bendpoint startX="2" startY="-214" endX="-336" endY="-18"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-5f8b8d0f2c1546a2beb61456ec412b34" source="id-20678216020043e88bc4136ba1d70d28" target="id-a1f2729cc4b345ec80373fb2bacf1722" archimateRelationship="id-6138248583834764a08a4fb2bffb7db3"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-841bf6e4745b4d839778d7b7bf2981c4" source="id-20678216020043e88bc4136ba1d70d28" target="id-8e3d5ebd505d46848d568ec406d0e468" archimateRelationship="id-1b11c7ac0c00473b984c0aba2dce42a8">
+          <bendpoint startX="2" startY="-286" endX="-612" endY="-2"/>
         </sourceConnection>
-        <sourceConnection xsi:type="archimate:Connection" id="id-4d69c34376f949f88f711eceb575f2fe" source="id-20678216020043e88bc4136ba1d70d28" target="id-b936aea1e8cf41309055bfbf02ee8ca6" archimateRelationship="id-eee5ca7a643e471cb6bbf6acace6081c"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-847ec4c34e3b46719acfce0dda4a6d0d" targetConnections="id-5540f719998c49f68508567e422cea4b id-25813dcc444542faa4628eef9f7160ae" archimateElement="id-2958c694cef84d9bb102c5bf41cf6e05">
         <bounds x="2160" y="738" width="144" height="72"/>
@@ -543,8 +531,8 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
         </sourceConnection>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-ca2da00419fe42a688552c705a94475a" targetConnections="id-0da635ca711d4a85992710f277df8377 id-792c5377da6e418cb74f186ac4ceb94c id-be0a00d51c0c4e19be191a0a704870d5" archimateElement="id-2c4f6f52977b480fb5b7fdf5304b1c7b">
-        <bounds x="1235" y="444" width="780" height="260"/>
-        <child xsi:type="archimate:DiagramObject" id="id-a1f2729cc4b345ec80373fb2bacf1722" targetConnections="id-c84f0e6772b345feaae3b46063943df8 id-ce4e302378584d259bff8da9c78d1b2c" archimateElement="id-f7a7731c4c02430aa89f275d63f0db26">
+        <bounds x="1200" y="444" width="780" height="260"/>
+        <child xsi:type="archimate:DiagramObject" id="id-a1f2729cc4b345ec80373fb2bacf1722" targetConnections="id-ce4e302378584d259bff8da9c78d1b2c id-5f8b8d0f2c1546a2beb61456ec412b34" archimateElement="id-f7a7731c4c02430aa89f275d63f0db26">
           <bounds x="30" y="55" width="210" height="60"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-4432c964fcf24e48900b7da40c8cef62" source="id-a1f2729cc4b345ec80373fb2bacf1722" target="id-7eedb3c34e6442bc865c1fe110bc49f9" archimateRelationship="id-658873d68a72454b9cc88c1c319fd519"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-792c5377da6e418cb74f186ac4ceb94c" source="id-a1f2729cc4b345ec80373fb2bacf1722" target="id-ca2da00419fe42a688552c705a94475a" archimateRelationship="id-4f13032ac57b4bd8a7a992a7edfdf80d"/>
@@ -581,7 +569,7 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
         <sourceConnection xsi:type="archimate:Connection" id="id-942d12992a1b44029fc3513bd1df2c37" source="id-fa628087c46141129c452af391d68190" target="id-909d4a0dbf714b049136f10c752e132d" archimateRelationship="id-661629ea437c49ffbe168e5a5330fe59"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-ce4e302378584d259bff8da9c78d1b2c" source="id-fa628087c46141129c452af391d68190" target="id-a1f2729cc4b345ec80373fb2bacf1722" archimateRelationship="id-7d35102d6e1e40408a17da4d1c00a285">
           <bendpoint startX="8" startY="-516" endX="-1646" endY="108"/>
-          <bendpoint startX="1484" startY="-516" endX="-170" endY="108"/>
+          <bendpoint startX="1460" startY="-516" endX="-158" endY="108"/>
           <bendpoint startX="1484" startY="-600" endX="-170" endY="24"/>
         </sourceConnection>
         <child xsi:type="archimate:DiagramObject" id="id-14ef1d0c569a459596a4aaf4ce64d486" targetConnections="id-8166b9c8ae8d432ca1c25156573d1224" archimateElement="id-405d535cc8754b348857f566b5edbdb2">
@@ -659,7 +647,7 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
         <bounds x="1476" y="1020" width="144" height="72"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-edc5a76567504e9ebd20460ccb0dba31" source="id-0fcfaf4b433840fea1024bc74df57712" target="id-7eedb3c34e6442bc865c1fe110bc49f9" archimateRelationship="id-9dc57d34bb204c63b03475081e2edaa6">
           <bendpoint startX="288" endX="212" endY="528"/>
-          <bendpoint startX="254" startY="-462" endX="236" endY="60"/>
+          <bendpoint startX="276" startY="-468" endX="235" endY="60"/>
           <bendpoint startX="74" startY="-462" endX="56" endY="60"/>
         </sourceConnection>
       </child>
@@ -679,7 +667,7 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
         <bounds x="1764" y="1752" width="450" height="130"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-d5c40047d0b84d4abc96cf574aeee20e" source="id-a305766cfe334135a8f8615ac2e927be" target="id-e7dd99994f264c49b0a5c71a0670068a" archimateRelationship="id-0bf02905cee6467cae0d97c324dd54c2"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-4db0399413a2408bb6bf2a7776b1bb14" source="id-a305766cfe334135a8f8615ac2e927be" target="id-8cdcc6d9b2744db484169ba2a5d7e194" archimateRelationship="id-f915fca2c99549658fdce6d8f4802401">
-          <bendpoint startX="-44" startY="-652" endX="64" endY="636"/>
+          <bendpoint startX="-56" startY="-676" endX="88" endY="612"/>
         </sourceConnection>
         <child xsi:type="archimate:DiagramObject" id="id-e7dd99994f264c49b0a5c71a0670068a" targetConnections="id-d5c40047d0b84d4abc96cf574aeee20e" archimateElement="id-37aa2bb5ffe641198fdc67972d96f068">
           <bounds x="25" y="50" width="200" height="55"/>
@@ -745,7 +733,7 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
           <sourceConnection xsi:type="archimate:Connection" id="id-237f95ce94de4cdc9c8f63233ff308f3" source="id-fb2f4860148a454cb2c1e3116362717d" target="id-21f6c39510b64085a84e07159409a1be" archimateRelationship="id-812893e611aa4cf28b8f15188a9f7e98"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-fdb15146336e4896aa7f76dc0e3814df" source="id-fb2f4860148a454cb2c1e3116362717d" target="id-b2a90fe9d04144b286d69952e569b523" archimateRelationship="id-edb940f5fe0c48acbf180b38d11477e5"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-8e3d5ebd505d46848d568ec406d0e468" targetConnections="id-92b738f2118e43249163e3c8054db644" archimateElement="id-42ebf9c8da8b479d89d3529c4f3b35b8">
+        <child xsi:type="archimate:DiagramObject" id="id-8e3d5ebd505d46848d568ec406d0e468" targetConnections="id-841bf6e4745b4d839778d7b7bf2981c4" archimateElement="id-42ebf9c8da8b479d89d3529c4f3b35b8">
           <bounds x="60" y="108" width="120" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-2d0569d603c644bca679bc2328af6324" source="id-8e3d5ebd505d46848d568ec406d0e468" target="id-d3a56c0c5fed4d109c0942c37173a363" archimateRelationship="id-c85e5bd6a5fa491a9633a6ebca174973">
             <bendpoint startX="12" startY="70" endX="-204" endY="-2"/>
@@ -787,12 +775,6 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
         <child xsi:type="archimate:DiagramObject" id="id-4eec71d6f94549d49efe7a0880dd9814" targetConnections="id-3927b4c28d6446f48716f897c678aa8c" archimateElement="id-2034fb33b40248e190439fcbe50fd7f1">
           <bounds x="36" y="36" width="156" height="55"/>
         </child>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-a2e389d39728455cacb51e570de4218c" archimateElement="id-81b7916b51fa40cdb005450f739fe725">
-        <bounds x="1056" y="486" width="145" height="73"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-80ff64bee1c54051a2995da04510eb4b" archimateElement="id-4bbac0b7e22f4210903482e757905ba0">
-        <bounds x="456" y="132" width="145" height="73"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-bfe3e14e11e9436c8a1506042cbb22fa" archimateElement="id-fb859793bbac4d78aee5231db9bde564">
         <bounds x="1308" y="153" width="147" height="70"/>

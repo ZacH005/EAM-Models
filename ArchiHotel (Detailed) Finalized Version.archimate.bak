@@ -20,15 +20,18 @@
     <element xsi:type="archimate:BusinessObject" name="Open Account" id="id-2958c694cef84d9bb102c5bf41cf6e05">
       <documentation>Conceptual operational ledger used by the hotel staff to track charges associated with a guest's stay</documentation>
     </element>
+    <element xsi:type="archimate:BusinessRole" name="Guest" id="id-5e75a88a24f04383b09ba956afb938ad"/>
     <element xsi:type="archimate:BusinessService" name="Laundry Service" id="id-2c4f6f52977b480fb5b7fdf5304b1c7b"/>
     <element xsi:type="archimate:BusinessProcess" name="Submit Laundry Reservation" id="id-f7a7731c4c02430aa89f275d63f0db26"/>
     <element xsi:type="archimate:BusinessProcess" name="Select Washing Program" id="id-c49fa088eea24f58877863cb2fd0b20f"/>
     <element xsi:type="archimate:BusinessProcess" name="Start Washing Machine" id="id-16dbcf60457049a3abf4a36c665ed9c5"/>
     <element xsi:type="archimate:BusinessObject" name="Laundry Reservation" id="id-380713f300454429824fba34956cad34"/>
     <element xsi:type="archimate:BusinessObject" name="Washing Program" id="id-6428e03172e64b21aac2290eafe6c0d4"/>
+    <element xsi:type="archimate:BusinessObject" name="Open Account" id="id-ab9d33fd117a4bc5bfc6770475a78ca6"/>
     <element xsi:type="archimate:BusinessObject" name="Laundry Charge" id="id-aa67a27adfdf4070b64ffb066a08b117">
       <documentation>is this necessary???</documentation>
     </element>
+    <element xsi:type="archimate:BusinessRole" name="Concierge Team" id="id-d288c506f4f94e3b82fbf13f8c51bcbe"/>
     <element xsi:type="archimate:BusinessProcess" name="Arrange External Cleaning (fallback)" id="id-35fc7fab541b438a9a2f5dddd316eb95"/>
     <element xsi:type="archimate:BusinessProcess" name="Arrange Transfer" id="id-7bd5dd20da344f608a949a77df509959"/>
     <element xsi:type="archimate:BusinessProcess" name="Request Transfer" id="id-42ebf9c8da8b479d89d3529c4f3b35b8"/>
@@ -40,6 +43,7 @@
     <element xsi:type="archimate:BusinessService" name="Transfer Service" id="id-7eac31f183084d55a98b82fc61348d9f"/>
   </folder>
   <folder name="Application" id="id-70b47308177c4dceaabceb77a3611b17" type="application">
+    <element xsi:type="archimate:ApplicationInterface" name="Application Interface" id="id-492e28dc78fc46c3993ef3ee2ec4394f"/>
     <element xsi:type="archimate:ApplicationProcess" name="Add Services to Reservation" id="id-abe32fc1142143a29e997bd91db1be77"/>
     <element xsi:type="archimate:DataObject" name="Special Requests" id="id-91986f7d113d40f99cfee487c15174b2"/>
     <element xsi:type="archimate:ApplicationComponent" name="External Booking Platform" id="id-a0b6fb2dd9a14071a3679b751fbc2500"/>
@@ -127,6 +131,10 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
       <documentation>This is the primary cloud-based backend hardware engine for the hotel. It provides the core compute power, processing memory, and database storage needed to run the logical modules of the Hotel Management System (HMS Core Engine) and the Transfer Management System (TMS).</documentation>
     </element>
     <element xsi:type="archimate:Device" name="Washing Machine / Integrated Washer-Dryer" id="id-24ec606f3ad0478ab82ae4ded7e2870b"/>
+    <element xsi:type="archimate:Device" name="Key Card" id="id-9fd12b0d62ad4f95a2557292eea8039c"/>
+    <element xsi:type="archimate:Device" name="Door Card Reader" id="id-360ced49e6a24bdc9fe97bb2dac7b6aa"/>
+    <element xsi:type="archimate:TechnologyFunction" name="RFID Access Verification" id="id-06d5555bb83f4ff3aae8f5521545a229"/>
+    <element xsi:type="archimate:TechnologyFunction" name="Door Unlocking" id="id-649a35159b264c828d6d03069f41cc50"/>
     <element xsi:type="archimate:Device" name="Key Card" id="id-12c1b3e29d824693a9ea2f6a99c7ea71"/>
     <element xsi:type="archimate:Device" name="Door Card Reader" id="id-954b5ed618c044e0974db67bc19d689a"/>
     <element xsi:type="archimate:SystemSoftware" name="Door System Software" id="id-3f066ab39d1945aab05ea43f989d3ddb"/>
@@ -140,8 +148,8 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
   </folder>
   <folder name="Other" id="id-b3e2ff14d2c14628a233d815b3da326a" type="other">
     <element xsi:type="archimate:Junction" name="Junction" id="id-8308967dde2d433d93d0e768b3a9c568" type="or"/>
-    <element xsi:type="archimate:Junction" name="Junction Transfer 1" id="id-4b93fa91e402471dacba49f1872ca866" type="or"/>
-    <element xsi:type="archimate:Junction" name="Junction Transfer 2" id="id-c3b7752a41144662a20ef68994f940eb" type="or"/>
+    <element xsi:type="archimate:Junction" name="Junction (copy)" id="id-4b93fa91e402471dacba49f1872ca866" type="or"/>
+    <element xsi:type="archimate:Junction" name="Junction (copy) (copy)" id="id-c3b7752a41144662a20ef68994f940eb" type="or"/>
   </folder>
   <folder name="Relations" id="id-b49e4c4e575a4183ad439c61a7217010" type="relations">
     <element xsi:type="archimate:TriggeringRelationship" id="id-7f9b16234d024017adcd6a37e9c42545" source="id-841e84c8b1594a149b1c817ed8aa5eee" target="id-ba00efa1318c46c5a46beb144896aee2"/>
@@ -166,6 +174,7 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
     <element xsi:type="archimate:AssignmentRelationship" id="id-1be0d78b461e40ecaa36f1b000b43dc4" source="id-f61e50c70b3242729d70190eafccd721" target="id-a116ebf3ed1b4de586ad79ed7e205248"/>
     <element xsi:type="archimate:AssignmentRelationship" id="id-271f15c9e4f048598a51786140d59ec4" source="id-f61e50c70b3242729d70190eafccd721" target="id-289c5ed0b90645a2a189691273cff66b"/>
     <element xsi:type="archimate:AssignmentRelationship" id="id-e449544524e9494eaf2ff2f5620fea21" source="id-a859d7dcff9c4a769c340fc4225a0f68" target="id-9a5e7c9827b04398a7e8bee3393f559d"/>
+    <element xsi:type="archimate:AccessRelationship" name="Push Charge" id="id-001e384f75cb4f2aaaeef1f8273ef88b" source="id-b7fe8076ba6d441b9bc938545bf5843b" target="id-5b0f197ef5f64c1a8e9067f71e6610e6"/>
     <element xsi:type="archimate:ServingRelationship" name="Serves" id="id-9677c2c6bd59474abe0997b6bf501f68" source="id-9394ba3905cb472f93fb22d1048223de" target="id-cadf5b6d698f43158a9a8e97077c0763"/>
     <element xsi:type="archimate:AccessRelationship" name="Write" id="id-c801ebbdfb044372a18f0dcad3f095e0" source="id-abe32fc1142143a29e997bd91db1be77" target="id-91986f7d113d40f99cfee487c15174b2"/>
     <element xsi:type="archimate:AccessRelationship" id="id-cc07786002f24587956d2f7acba813c5" source="id-60f3bf954e9f4dfda68a022a44910cf9" target="id-5b0f197ef5f64c1a8e9067f71e6610e6"/>
@@ -186,9 +195,12 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
     <element xsi:type="archimate:ServingRelationship" name="Hosts Backend Components" id="id-73d3d801b7774329a4fe04ea2daeb099" source="id-112aba1b7d8247e6bbc59e50317b1965" target="id-9394ba3905cb472f93fb22d1048223de"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-32ae702d8ad9443b8c13022066917966" source="id-40abb90ec07b4a33a35046bd9f15e360" target="id-ab4eaa086dc841a49e6202ec8fa388b4"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-878348ecd5c24cabafb6fd6c79413a39" source="id-16dbcf60457049a3abf4a36c665ed9c5" target="id-2c4f6f52977b480fb5b7fdf5304b1c7b"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-08d0ec4f8b5d445ebe24e2dd63df6f61" source="id-5e75a88a24f04383b09ba956afb938ad" target="id-f7a7731c4c02430aa89f275d63f0db26"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-4f13032ac57b4bd8a7a992a7edfdf80d" source="id-f7a7731c4c02430aa89f275d63f0db26" target="id-2c4f6f52977b480fb5b7fdf5304b1c7b"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-045df76cab684ac6bc664a27b381e2b3" source="id-d288c506f4f94e3b82fbf13f8c51bcbe" target="id-35fc7fab541b438a9a2f5dddd316eb95"/>
     <element xsi:type="archimate:TriggeringRelationship" id="id-326225895ba0410eac87204209fb4088" source="id-c49fa088eea24f58877863cb2fd0b20f" target="id-16dbcf60457049a3abf4a36c665ed9c5"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-5420abc95cab4b67ae84f8c9af8fd7a7" source="id-c49fa088eea24f58877863cb2fd0b20f" target="id-2c4f6f52977b480fb5b7fdf5304b1c7b"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-9466c9a9542b4dd19f47decbde858c9a" source="id-35fc7fab541b438a9a2f5dddd316eb95" target="id-ab9d33fd117a4bc5bfc6770475a78ca6"/>
     <element xsi:type="archimate:TriggeringRelationship" id="id-658873d68a72454b9cc88c1c319fd519" source="id-f7a7731c4c02430aa89f275d63f0db26" target="id-c49fa088eea24f58877863cb2fd0b20f"/>
     <element xsi:type="archimate:AccessRelationship" id="id-0ecd4e08379b405b8b73816b010bc9d7" source="id-f7a7731c4c02430aa89f275d63f0db26" target="id-380713f300454429824fba34956cad34"/>
     <element xsi:type="archimate:AccessRelationship" id="id-b97629e8b5be4c488abf03267d25a21c" source="id-c49fa088eea24f58877863cb2fd0b20f" target="id-6428e03172e64b21aac2290eafe6c0d4"/>
@@ -215,6 +227,8 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
     <element xsi:type="archimate:ServingRelationship" id="id-9dc57d34bb204c63b03475081e2edaa6" source="id-9cca9856cd5f445fbcbcb36f9004d473" target="id-c49fa088eea24f58877863cb2fd0b20f"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-3463425181804df2b7bdef83e6ecc0b6" source="id-3c51bf49e43248ac886619ae27654ae6" target="id-46ad2e6a06e34753964d9c976b82c29f"/>
     <element xsi:type="archimate:RealizationRelationship" id="id-df4d85ed5c07415baf188625ede65a05" source="id-24ec606f3ad0478ab82ae4ded7e2870b" target="id-66f4db66cf2b4faab1980052e326e0f1"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-93226d88bc1d4951b5fda8a41d14cb50" source="id-9fd12b0d62ad4f95a2557292eea8039c" target="id-360ced49e6a24bdc9fe97bb2dac7b6aa"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-0740ff9145384d8d94231bf3abb6554d" source="id-06d5555bb83f4ff3aae8f5521545a229" target="id-649a35159b264c828d6d03069f41cc50"/>
     <element xsi:type="archimate:FlowRelationship" id="id-9133942575784a288c3cf5bbc7bcb5b2" source="id-12c1b3e29d824693a9ea2f6a99c7ea71" target="id-954b5ed618c044e0974db67bc19d689a"/>
     <element xsi:type="archimate:TriggeringRelationship" id="id-3b88190452524cb5a0c83275f0745151" source="id-37aa2bb5ffe641198fdc67972d96f068" target="id-46ec139b0aca45439bca012e8902fed0"/>
     <element xsi:type="archimate:ServingRelationship" id="id-67d112e53fc84f05aa96f3979c2ae8a6" source="id-954b5ed618c044e0974db67bc19d689a" target="id-3f066ab39d1945aab05ea43f989d3ddb"/>
@@ -542,39 +556,39 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
           <bendpoint startX="1806" startY="6" endX="-328" endY="372"/>
         </sourceConnection>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-ca2da00419fe42a688552c705a94475a" targetConnections="id-0da635ca711d4a85992710f277df8377 id-792c5377da6e418cb74f186ac4ceb94c id-be0a00d51c0c4e19be191a0a704870d5" archimateElement="id-2c4f6f52977b480fb5b7fdf5304b1c7b">
+      <child xsi:type="archimate:DiagramObject" id="id-ca2da00419fe42a688552c705a94475a" targetConnections="id-0da635ca711d4a85992710f277df8377 id-792c5377da6e418cb74f186ac4ceb94c id-be0a00d51c0c4e19be191a0a704870d5" fillColor="#FAC775" archimateElement="id-2c4f6f52977b480fb5b7fdf5304b1c7b">
         <bounds x="1235" y="444" width="780" height="260"/>
-        <child xsi:type="archimate:DiagramObject" id="id-a1f2729cc4b345ec80373fb2bacf1722" targetConnections="id-c84f0e6772b345feaae3b46063943df8 id-ce4e302378584d259bff8da9c78d1b2c" archimateElement="id-f7a7731c4c02430aa89f275d63f0db26">
+        <child xsi:type="archimate:DiagramObject" id="id-a1f2729cc4b345ec80373fb2bacf1722" targetConnections="id-c84f0e6772b345feaae3b46063943df8 id-ce4e302378584d259bff8da9c78d1b2c" fillColor="#FAC775" archimateElement="id-f7a7731c4c02430aa89f275d63f0db26">
           <bounds x="30" y="55" width="210" height="60"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-4432c964fcf24e48900b7da40c8cef62" source="id-a1f2729cc4b345ec80373fb2bacf1722" target="id-7eedb3c34e6442bc865c1fe110bc49f9" archimateRelationship="id-658873d68a72454b9cc88c1c319fd519"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-792c5377da6e418cb74f186ac4ceb94c" source="id-a1f2729cc4b345ec80373fb2bacf1722" target="id-ca2da00419fe42a688552c705a94475a" archimateRelationship="id-4f13032ac57b4bd8a7a992a7edfdf80d"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-0240ab5825d24296af96f94815f5c5a4" source="id-a1f2729cc4b345ec80373fb2bacf1722" target="id-18450e207559487989d5b7ca703baf6e" archimateRelationship="id-0ecd4e08379b405b8b73816b010bc9d7"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-7eedb3c34e6442bc865c1fe110bc49f9" targetConnections="id-4432c964fcf24e48900b7da40c8cef62 id-edc5a76567504e9ebd20460ccb0dba31" archimateElement="id-c49fa088eea24f58877863cb2fd0b20f">
+        <child xsi:type="archimate:DiagramObject" id="id-7eedb3c34e6442bc865c1fe110bc49f9" targetConnections="id-4432c964fcf24e48900b7da40c8cef62 id-edc5a76567504e9ebd20460ccb0dba31" fillColor="#FAC775" archimateElement="id-c49fa088eea24f58877863cb2fd0b20f">
           <bounds x="285" y="55" width="210" height="60"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-f6b169dd21074182ad94896a0b2a6b46" source="id-7eedb3c34e6442bc865c1fe110bc49f9" target="id-8cdcc6d9b2744db484169ba2a5d7e194" archimateRelationship="id-326225895ba0410eac87204209fb4088"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-be0a00d51c0c4e19be191a0a704870d5" source="id-7eedb3c34e6442bc865c1fe110bc49f9" target="id-ca2da00419fe42a688552c705a94475a" archimateRelationship="id-5420abc95cab4b67ae84f8c9af8fd7a7"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-8408940769ea40e396ea21f7a95433c4" source="id-7eedb3c34e6442bc865c1fe110bc49f9" target="id-20f41f8e886f40c2917f14b4967d1d76" archimateRelationship="id-b97629e8b5be4c488abf03267d25a21c"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-8cdcc6d9b2744db484169ba2a5d7e194" targetConnections="id-f6b169dd21074182ad94896a0b2a6b46 id-4db0399413a2408bb6bf2a7776b1bb14" archimateElement="id-16dbcf60457049a3abf4a36c665ed9c5">
+        <child xsi:type="archimate:DiagramObject" id="id-8cdcc6d9b2744db484169ba2a5d7e194" targetConnections="id-f6b169dd21074182ad94896a0b2a6b46 id-4db0399413a2408bb6bf2a7776b1bb14" fillColor="#FAC775" archimateElement="id-16dbcf60457049a3abf4a36c665ed9c5">
           <bounds x="540" y="55" width="210" height="60"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-0da635ca711d4a85992710f277df8377" source="id-8cdcc6d9b2744db484169ba2a5d7e194" target="id-ca2da00419fe42a688552c705a94475a" archimateRelationship="id-878348ecd5c24cabafb6fd6c79413a39"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-18450e207559487989d5b7ca703baf6e" targetConnections="id-0240ab5825d24296af96f94815f5c5a4" archimateElement="id-380713f300454429824fba34956cad34">
+        <child xsi:type="archimate:DiagramObject" id="id-18450e207559487989d5b7ca703baf6e" targetConnections="id-0240ab5825d24296af96f94815f5c5a4" fillColor="#FAC775" archimateElement="id-380713f300454429824fba34956cad34">
           <bounds x="30" y="170" width="210" height="55"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-20f41f8e886f40c2917f14b4967d1d76" targetConnections="id-8408940769ea40e396ea21f7a95433c4" archimateElement="id-6428e03172e64b21aac2290eafe6c0d4">
+        <child xsi:type="archimate:DiagramObject" id="id-20f41f8e886f40c2917f14b4967d1d76" targetConnections="id-8408940769ea40e396ea21f7a95433c4" fillColor="#FAC775" archimateElement="id-6428e03172e64b21aac2290eafe6c0d4">
           <bounds x="285" y="170" width="210" height="55"/>
         </child>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-43c07bb6bcbe41ee96a0c2452a5954db" targetConnections="id-20048f07f9cd46b68fd432ff350accd4" archimateElement="id-aa67a27adfdf4070b64ffb066a08b117">
+      <child xsi:type="archimate:DiagramObject" id="id-43c07bb6bcbe41ee96a0c2452a5954db" targetConnections="id-20048f07f9cd46b68fd432ff350accd4" fillColor="#FAC775" archimateElement="id-aa67a27adfdf4070b64ffb066a08b117">
         <bounds x="659" y="809" width="144" height="74"/>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-6ceb82a78622423aaf89c427df22af99" targetConnections="id-5c6528f2dd6a423598fca6001d54a965" archimateElement="id-35fc7fab541b438a9a2f5dddd316eb95">
+      <child xsi:type="archimate:DiagramObject" id="id-6ceb82a78622423aaf89c427df22af99" targetConnections="id-5c6528f2dd6a423598fca6001d54a965" fillColor="#FAC775" archimateElement="id-35fc7fab541b438a9a2f5dddd316eb95">
         <bounds x="1260" y="744" width="144" height="72"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-25813dcc444542faa4628eef9f7160ae" source="id-6ceb82a78622423aaf89c427df22af99" target="id-847ec4c34e3b46719acfce0dda4a6d0d" archimateRelationship="id-50ab4cdfbb7c4a50b2f0d7149a7cf3db"/>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-fa628087c46141129c452af391d68190" archimateElement="id-46ad2e6a06e34753964d9c976b82c29f">
+      <child xsi:type="archimate:DiagramObject" id="id-fa628087c46141129c452af391d68190" fillColor="#B5D4F4" archimateElement="id-46ad2e6a06e34753964d9c976b82c29f">
         <bounds x="-600" y="998" width="632" height="310"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-c216451349b2455e9a03f1e0a611d1d3" source="id-fa628087c46141129c452af391d68190" target="id-3c719f17743145a3bc5b08f0eb9783a2" archimateRelationship="id-be4b4dc16c9f47e386a3b4b917cefdd7"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-0fd1835d265a44f2bd10063afc46ed3e" source="id-fa628087c46141129c452af391d68190" target="id-7550dbb4baa54164af34e699cd02e19d" archimateRelationship="id-ca4be35dc157496dad69f7fdf39d0087"/>
@@ -584,10 +598,10 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
           <bendpoint startX="1484" startY="-516" endX="-170" endY="108"/>
           <bendpoint startX="1484" startY="-600" endX="-170" endY="24"/>
         </sourceConnection>
-        <child xsi:type="archimate:DiagramObject" id="id-14ef1d0c569a459596a4aaf4ce64d486" targetConnections="id-8166b9c8ae8d432ca1c25156573d1224" archimateElement="id-405d535cc8754b348857f566b5edbdb2">
+        <child xsi:type="archimate:DiagramObject" id="id-14ef1d0c569a459596a4aaf4ce64d486" targetConnections="id-8166b9c8ae8d432ca1c25156573d1224" fillColor="#B5D4F4" archimateElement="id-405d535cc8754b348857f566b5edbdb2">
           <bounds x="12" y="45" width="170" height="55"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-909d4a0dbf714b049136f10c752e132d" targetConnections="id-942d12992a1b44029fc3513bd1df2c37" archimateElement="id-2174a68731074f739ce68fa66204930c">
+        <child xsi:type="archimate:DiagramObject" id="id-909d4a0dbf714b049136f10c752e132d" targetConnections="id-942d12992a1b44029fc3513bd1df2c37" fillColor="#B5D4F4" archimateElement="id-2174a68731074f739ce68fa66204930c">
           <bounds x="252" y="45" width="210" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-4690015f1c6f4fbea7af5630807b7588" source="id-909d4a0dbf714b049136f10c752e132d" target="id-7550dbb4baa54164af34e699cd02e19d" archimateRelationship="id-9e2ffac1a3764577b4cc0e7510390853"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-878dadf27aaf454680cc86888a35ca3c" source="id-909d4a0dbf714b049136f10c752e132d" target="id-f54636fe34604c318395ebdba1e9b003" archimateRelationship="id-f4f8a723ec7646d6a2b9c1fd2977192a"/>
@@ -595,15 +609,15 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
             <bendpoint startX="-135" startY="-2" endX="74" endY="-82"/>
           </sourceConnection>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-3c719f17743145a3bc5b08f0eb9783a2" targetConnections="id-c216451349b2455e9a03f1e0a611d1d3 id-1957a83d9c5843d4b7481de0d9671f33" archimateElement="id-46b521373c674b4885ee0331016132b0">
+        <child xsi:type="archimate:DiagramObject" id="id-3c719f17743145a3bc5b08f0eb9783a2" targetConnections="id-c216451349b2455e9a03f1e0a611d1d3 id-1957a83d9c5843d4b7481de0d9671f33" fillColor="#B5D4F4" archimateElement="id-46b521373c674b4885ee0331016132b0">
           <bounds x="12" y="125" width="210" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-c1eb0dc70e364d4ebc26c74a2de08152" source="id-3c719f17743145a3bc5b08f0eb9783a2" target="id-47485582bb9d4b3eb6c00e1562bd4fe2" archimateRelationship="id-9e929ccf794a480f9f0333bc091d644d"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-7550dbb4baa54164af34e699cd02e19d" targetConnections="id-0fd1835d265a44f2bd10063afc46ed3e id-4690015f1c6f4fbea7af5630807b7588" archimateElement="id-d23ab7e60bc74cdf85697ce5526d6b20">
+        <child xsi:type="archimate:DiagramObject" id="id-7550dbb4baa54164af34e699cd02e19d" targetConnections="id-0fd1835d265a44f2bd10063afc46ed3e id-4690015f1c6f4fbea7af5630807b7588" fillColor="#B5D4F4" archimateElement="id-d23ab7e60bc74cdf85697ce5526d6b20">
           <bounds x="252" y="125" width="210" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-f8efc94c0d3147888bc2fc5c5ff36f02" source="id-7550dbb4baa54164af34e699cd02e19d" target="id-135e40c920f34e119d5de9e7a256ff7d" archimateRelationship="id-b58e1b50094a47ea98343878455378d3"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-47485582bb9d4b3eb6c00e1562bd4fe2" targetConnections="id-c1eb0dc70e364d4ebc26c74a2de08152" archimateElement="id-ce425d45f77f4739b07ecd55d4f2b11c">
+        <child xsi:type="archimate:DiagramObject" id="id-47485582bb9d4b3eb6c00e1562bd4fe2" targetConnections="id-c1eb0dc70e364d4ebc26c74a2de08152" fillColor="#B5D4F4" archimateElement="id-ce425d45f77f4739b07ecd55d4f2b11c">
           <bounds x="12" y="210" width="210" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-1f1e20b155de42649abbc27d6b7d9667" source="id-47485582bb9d4b3eb6c00e1562bd4fe2" target="id-3141755d17194471b3dbf1eab5a6faf9" archimateRelationship="id-24662b6795ea4a378547577a09703dc9"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-d2c9993fdd914dbeae0209ef282958ff" source="id-47485582bb9d4b3eb6c00e1562bd4fe2" target="id-b760113a0f694964ac45f984687bff76" archimateRelationship="id-8d4bb56eb4d74f4789d524670e7a95fa">
@@ -611,7 +625,7 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
             <bendpoint startX="447" startY="61" endX="6" endY="61"/>
           </sourceConnection>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-3141755d17194471b3dbf1eab5a6faf9" targetConnections="id-1f1e20b155de42649abbc27d6b7d9667 id-9e5b2b07e4614b149e30457b8b6ca927" archimateElement="id-66f4db66cf2b4faab1980052e326e0f1">
+        <child xsi:type="archimate:DiagramObject" id="id-3141755d17194471b3dbf1eab5a6faf9" targetConnections="id-1f1e20b155de42649abbc27d6b7d9667 id-9e5b2b07e4614b149e30457b8b6ca927" fillColor="#B5D4F4" archimateElement="id-66f4db66cf2b4faab1980052e326e0f1">
           <bounds x="252" y="210" width="210" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-c16c89151ded4cfeac61b0ab3c6d152a" source="id-3141755d17194471b3dbf1eab5a6faf9" target="id-9da8f01070ad4bff91c3c93435bc859e" archimateRelationship="id-a46f2e15ea0747509f135483ded0355c">
             <bendpoint startX="3" startY="-47" endX="-655" endY="113"/>
@@ -620,42 +634,42 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
             <bendpoint startX="499" startY="-167" endX="-151" endY="-7"/>
           </sourceConnection>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-f54636fe34604c318395ebdba1e9b003" targetConnections="id-878dadf27aaf454680cc86888a35ca3c" archimateElement="id-52d595d3f84b48a681ec115d9fe7d62b">
+        <child xsi:type="archimate:DiagramObject" id="id-f54636fe34604c318395ebdba1e9b003" targetConnections="id-878dadf27aaf454680cc86888a35ca3c" fillColor="#B5D4F4" archimateElement="id-52d595d3f84b48a681ec115d9fe7d62b">
           <bounds x="504" y="45" width="109" height="55"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-135e40c920f34e119d5de9e7a256ff7d" targetConnections="id-f8efc94c0d3147888bc2fc5c5ff36f02" archimateElement="id-8b6ec1c9cfc840c68eb19dae00fd6720">
+        <child xsi:type="archimate:DiagramObject" id="id-135e40c920f34e119d5de9e7a256ff7d" targetConnections="id-f8efc94c0d3147888bc2fc5c5ff36f02" fillColor="#B5D4F4" archimateElement="id-8b6ec1c9cfc840c68eb19dae00fd6720">
           <bounds x="504" y="125" width="109" height="55"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-b760113a0f694964ac45f984687bff76" targetConnections="id-d2c9993fdd914dbeae0209ef282958ff" archimateElement="id-8b415b867c0f4ef48796cb883e247b95">
+        <child xsi:type="archimate:DiagramObject" id="id-b760113a0f694964ac45f984687bff76" targetConnections="id-d2c9993fdd914dbeae0209ef282958ff" fillColor="#B5D4F4" archimateElement="id-8b415b867c0f4ef48796cb883e247b95">
           <bounds x="504" y="210" width="109" height="55"/>
         </child>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-607dca287cf2482bb30ed2326aac2645" targetConnections="id-fed0087560304d7884e4c5a33c7b7916" archimateElement="id-ab4eaa086dc841a49e6202ec8fa388b4">
+      <child xsi:type="archimate:DiagramObject" id="id-607dca287cf2482bb30ed2326aac2645" targetConnections="id-fed0087560304d7884e4c5a33c7b7916" fillColor="#B5D4F4" archimateElement="id-ab4eaa086dc841a49e6202ec8fa388b4">
         <bounds x="280" y="998" width="380" height="310"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-65258000589247b491d200d99dd8d634" source="id-607dca287cf2482bb30ed2326aac2645" target="id-2cf25192cab9497bb3f9da0376e3a809" archimateRelationship="id-96ce881182384479afefe1ca8dfd2944"/>
-        <child xsi:type="archimate:DiagramObject" id="id-9da8f01070ad4bff91c3c93435bc859e" targetConnections="id-c16c89151ded4cfeac61b0ab3c6d152a" archimateElement="id-f86b2a92c18c44ee9b45c01bfd4d975f">
+        <child xsi:type="archimate:DiagramObject" id="id-9da8f01070ad4bff91c3c93435bc859e" targetConnections="id-c16c89151ded4cfeac61b0ab3c6d152a" fillColor="#B5D4F4" archimateElement="id-f86b2a92c18c44ee9b45c01bfd4d975f">
           <bounds x="30" y="50" width="210" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-4f5aa1229abf4095a90ad799c1259e13" source="id-9da8f01070ad4bff91c3c93435bc859e" target="id-1021c7047c584eb484f8c0043024efea" archimateRelationship="id-1bd0ca8f66384232879e4a5896c70d35"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-1021c7047c584eb484f8c0043024efea" targetConnections="id-4f5aa1229abf4095a90ad799c1259e13" archimateElement="id-4daab7d699974f0180c42eb883190dd2">
+        <child xsi:type="archimate:DiagramObject" id="id-1021c7047c584eb484f8c0043024efea" targetConnections="id-4f5aa1229abf4095a90ad799c1259e13" fillColor="#B5D4F4" archimateElement="id-4daab7d699974f0180c42eb883190dd2">
           <bounds x="30" y="130" width="210" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-29e20d4ec30449779f8eceb98788240d" source="id-1021c7047c584eb484f8c0043024efea" target="id-261e1f7137024f90bc8bf62de20dbee2" archimateRelationship="id-c2b211119fd3404eb65a11b4edd4f369"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-2f28e9d89be14c719fb1903b47f98f46" source="id-1021c7047c584eb484f8c0043024efea" target="id-2cf25192cab9497bb3f9da0376e3a809" archimateRelationship="id-f16c18fdbf7c4d6bac55c32d8b1b686c"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-2cf25192cab9497bb3f9da0376e3a809" targetConnections="id-65258000589247b491d200d99dd8d634 id-2f28e9d89be14c719fb1903b47f98f46" archimateElement="id-b7fe8076ba6d441b9bc938545bf5843b">
+        <child xsi:type="archimate:DiagramObject" id="id-2cf25192cab9497bb3f9da0376e3a809" targetConnections="id-65258000589247b491d200d99dd8d634 id-2f28e9d89be14c719fb1903b47f98f46" fillColor="#B5D4F4" archimateElement="id-b7fe8076ba6d441b9bc938545bf5843b">
           <bounds x="30" y="210" width="210" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-5ffe5b494df4489b8d0946acbc5dd0aa" source="id-2cf25192cab9497bb3f9da0376e3a809" target="id-dfb8a58994db40a395c94016eb745822" archimateRelationship="id-9cba5c8e5a854f1ab379f1c8c17bdaad">
             <bendpoint startX="6" startY="146" endX="-1012" endY="6"/>
           </sourceConnection>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-261e1f7137024f90bc8bf62de20dbee2" targetConnections="id-29e20d4ec30449779f8eceb98788240d" archimateElement="id-d5af7d74a8af412cb280ab5aaa094205">
+        <child xsi:type="archimate:DiagramObject" id="id-261e1f7137024f90bc8bf62de20dbee2" targetConnections="id-29e20d4ec30449779f8eceb98788240d" fillColor="#B5D4F4" archimateElement="id-d5af7d74a8af412cb280ab5aaa094205">
           <bounds x="260" y="130" width="112" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-20048f07f9cd46b68fd432ff350accd4" source="id-261e1f7137024f90bc8bf62de20dbee2" target="id-43c07bb6bcbe41ee96a0c2452a5954db" archimateRelationship="id-b779960553c0452b898b2b014e35fd77">
             <bendpoint startX="136" startY="-2" endX="2" endY="307"/>
           </sourceConnection>
         </child>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-0fcfaf4b433840fea1024bc74df57712" archimateElement="id-9cca9856cd5f445fbcbcb36f9004d473">
+      <child xsi:type="archimate:DiagramObject" id="id-0fcfaf4b433840fea1024bc74df57712" fillColor="#B5D4F4" archimateElement="id-9cca9856cd5f445fbcbcb36f9004d473">
         <bounds x="1476" y="1020" width="144" height="72"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-edc5a76567504e9ebd20460ccb0dba31" source="id-0fcfaf4b433840fea1024bc74df57712" target="id-7eedb3c34e6442bc865c1fe110bc49f9" archimateRelationship="id-9dc57d34bb204c63b03475081e2edaa6">
           <bendpoint startX="288" endX="212" endY="528"/>
@@ -663,29 +677,29 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
           <bendpoint startX="74" startY="-462" endX="56" endY="60"/>
         </sourceConnection>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-8fd67a5db64e4ae397c2d148bff046c5" archimateElement="id-24ec606f3ad0478ab82ae4ded7e2870b">
+      <child xsi:type="archimate:DiagramObject" id="id-8fd67a5db64e4ae397c2d148bff046c5" fillColor="#C0DD97" archimateElement="id-24ec606f3ad0478ab82ae4ded7e2870b">
         <bounds x="-399" y="1530" width="260" height="60"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-9e5b2b07e4614b149e30457b8b6ca927" source="id-8fd67a5db64e4ae397c2d148bff046c5" target="id-3141755d17194471b3dbf1eab5a6faf9" archimateRelationship="id-df4d85ed5c07415baf188625ede65a05"/>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-cfb9df3fe4e141cbbd859c97d2d4d800" archimateElement="id-12c1b3e29d824693a9ea2f6a99c7ea71">
+      <child xsi:type="archimate:DiagramObject" id="id-cfb9df3fe4e141cbbd859c97d2d4d800" fillColor="#C0DD97" archimateElement="id-12c1b3e29d824693a9ea2f6a99c7ea71">
         <bounds x="1330" y="1800" width="144" height="72"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-d3ab2b749a5846979ea81e726a6ad0af" source="id-cfb9df3fe4e141cbbd859c97d2d4d800" target="id-ae808b0637d84949959fbd99a996c0de" archimateRelationship="id-9133942575784a288c3cf5bbc7bcb5b2"/>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-ae808b0637d84949959fbd99a996c0de" targetConnections="id-d3ab2b749a5846979ea81e726a6ad0af" archimateElement="id-954b5ed618c044e0974db67bc19d689a">
+      <child xsi:type="archimate:DiagramObject" id="id-ae808b0637d84949959fbd99a996c0de" targetConnections="id-d3ab2b749a5846979ea81e726a6ad0af" fillColor="#C0DD97" archimateElement="id-954b5ed618c044e0974db67bc19d689a">
         <bounds x="1534" y="1800" width="144" height="72"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-19208326d8a240c5943b5ef3796f3ead" source="id-ae808b0637d84949959fbd99a996c0de" target="id-a305766cfe334135a8f8615ac2e927be" archimateRelationship="id-67d112e53fc84f05aa96f3979c2ae8a6"/>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-a305766cfe334135a8f8615ac2e927be" targetConnections="id-19208326d8a240c5943b5ef3796f3ead" archimateElement="id-3f066ab39d1945aab05ea43f989d3ddb">
+      <child xsi:type="archimate:DiagramObject" id="id-a305766cfe334135a8f8615ac2e927be" targetConnections="id-19208326d8a240c5943b5ef3796f3ead" fillColor="#C0DD97" archimateElement="id-3f066ab39d1945aab05ea43f989d3ddb">
         <bounds x="1764" y="1752" width="450" height="130"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-d5c40047d0b84d4abc96cf574aeee20e" source="id-a305766cfe334135a8f8615ac2e927be" target="id-e7dd99994f264c49b0a5c71a0670068a" archimateRelationship="id-0bf02905cee6467cae0d97c324dd54c2"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-4db0399413a2408bb6bf2a7776b1bb14" source="id-a305766cfe334135a8f8615ac2e927be" target="id-8cdcc6d9b2744db484169ba2a5d7e194" archimateRelationship="id-f915fca2c99549658fdce6d8f4802401">
           <bendpoint startX="-44" startY="-652" endX="64" endY="636"/>
         </sourceConnection>
-        <child xsi:type="archimate:DiagramObject" id="id-e7dd99994f264c49b0a5c71a0670068a" targetConnections="id-d5c40047d0b84d4abc96cf574aeee20e" archimateElement="id-37aa2bb5ffe641198fdc67972d96f068">
+        <child xsi:type="archimate:DiagramObject" id="id-e7dd99994f264c49b0a5c71a0670068a" targetConnections="id-d5c40047d0b84d4abc96cf574aeee20e" fillColor="#C0DD97" archimateElement="id-37aa2bb5ffe641198fdc67972d96f068">
           <bounds x="25" y="50" width="200" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-f4b5cca22e3d41dbb743f1a399753aaf" source="id-e7dd99994f264c49b0a5c71a0670068a" target="id-a9edfadcda7d48589ccbb71be162836a" archimateRelationship="id-3b88190452524cb5a0c83275f0745151"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-a9edfadcda7d48589ccbb71be162836a" targetConnections="id-f4b5cca22e3d41dbb743f1a399753aaf" archimateElement="id-46ec139b0aca45439bca012e8902fed0">
+        <child xsi:type="archimate:DiagramObject" id="id-a9edfadcda7d48589ccbb71be162836a" targetConnections="id-f4b5cca22e3d41dbb743f1a399753aaf" fillColor="#C0DD97" archimateElement="id-46ec139b0aca45439bca012e8902fed0">
           <bounds x="260" y="50" width="160" height="55"/>
         </child>
       </child>
@@ -715,11 +729,11 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
           <bendpoint startX="768" startY="-2" endX="30" endY="-542"/>
         </sourceConnection>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-b2a90fe9d04144b286d69952e569b523" targetConnections="id-74a00c58d2334687aa55f95bfe2e523e id-575a26a1b47740219028d624ebbc7b89 id-fdb15146336e4896aa7f76dc0e3814df id-7d43889242e943cab378a56583aca0a3" archimateElement="id-7eac31f183084d55a98b82fc61348d9f">
+      <child xsi:type="archimate:DiagramObject" id="id-b2a90fe9d04144b286d69952e569b523" targetConnections="id-74a00c58d2334687aa55f95bfe2e523e id-575a26a1b47740219028d624ebbc7b89 id-fdb15146336e4896aa7f76dc0e3814df id-7d43889242e943cab378a56583aca0a3" fillColor="#FAC775" archimateElement="id-7eac31f183084d55a98b82fc61348d9f">
         <bounds x="1200" y="120" width="780" height="260"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-8ac6bf3ab6be420fa4688f45841c7b5c" source="id-b2a90fe9d04144b286d69952e569b523" target="id-a86a1ce466074731a9660ab0f3e89983" archimateRelationship="id-4f87c5ca2fe240a190c3a3d63fd0e0de"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-31c11110d20941cf9c73c389bfc3a9b9" source="id-b2a90fe9d04144b286d69952e569b523" target="id-21f6c39510b64085a84e07159409a1be" archimateRelationship="id-736a46097eb3490d8aa705c51f3aeff6"/>
-        <child xsi:type="archimate:DiagramObject" id="id-d3a56c0c5fed4d109c0942c37173a363" targetConnections="id-414fdbf28628412da74a716632cd6580 id-2d0569d603c644bca679bc2328af6324 id-92add109a90f48d4911491df744caf22" archimateElement="id-7bd5dd20da344f608a949a77df509959">
+        <child xsi:type="archimate:DiagramObject" id="id-d3a56c0c5fed4d109c0942c37173a363" targetConnections="id-414fdbf28628412da74a716632cd6580 id-2d0569d603c644bca679bc2328af6324 id-92add109a90f48d4911491df744caf22" fillColor="#fac775" archimateElement="id-7bd5dd20da344f608a949a77df509959">
           <bounds x="276" y="180" width="120" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-ce641470d23e42788a9ec6a9d6087bc0" source="id-d3a56c0c5fed4d109c0942c37173a363" target="id-a86a1ce466074731a9660ab0f3e89983" archimateRelationship="id-5e03dabea72e41e0944b9ea76754f3ed">
             <bendpoint startX="6" startY="-123" endX="198" endY="12"/>
@@ -727,17 +741,17 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
           <sourceConnection xsi:type="archimate:Connection" id="id-4f5fecdf50a8464694266a8aecfa3304" source="id-d3a56c0c5fed4d109c0942c37173a363" target="id-fb2f4860148a454cb2c1e3116362717d" archimateRelationship="id-95ef2b501c5f45b8be0780d8a1528d82"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-74a00c58d2334687aa55f95bfe2e523e" source="id-d3a56c0c5fed4d109c0942c37173a363" target="id-b2a90fe9d04144b286d69952e569b523" archimateRelationship="id-b5ff9a6c109e45e1a6e74f19a8e31545"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-30273a07ec9c4a708b465d33782c97f7" targetConnections="id-15794e1499224c618fa2792afe62c50d id-cb8ed8b8274e4ba885352f2a3d7feea9" archimateElement="id-794034721ce24b3aa9a53f70e8d02b9e">
+        <child xsi:type="archimate:DiagramObject" id="id-30273a07ec9c4a708b465d33782c97f7" targetConnections="id-15794e1499224c618fa2792afe62c50d id-cb8ed8b8274e4ba885352f2a3d7feea9" fillColor="#fac775" archimateElement="id-794034721ce24b3aa9a53f70e8d02b9e">
           <bounds x="624" y="72" width="120" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-a015c7e0eecd4defa7a2969c2978b1aa" source="id-30273a07ec9c4a708b465d33782c97f7" target="id-fb2f4860148a454cb2c1e3116362717d" archimateRelationship="id-810008f7d6aa48698f03e2927a72799e">
             <bendpoint startY="118" endX="180" endY="10"/>
           </sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-7d43889242e943cab378a56583aca0a3" source="id-30273a07ec9c4a708b465d33782c97f7" target="id-b2a90fe9d04144b286d69952e569b523" archimateRelationship="id-8711b3c0b58f431ba3dca9e8290f3337"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-a86a1ce466074731a9660ab0f3e89983" targetConnections="id-ce641470d23e42788a9ec6a9d6087bc0 id-c866a0d11ea64a718dbcec9d50875d11 id-8ac6bf3ab6be420fa4688f45841c7b5c" archimateElement="id-f0bd505078714e08b3eff3a79e7bf5aa">
+        <child xsi:type="archimate:DiagramObject" id="id-a86a1ce466074731a9660ab0f3e89983" targetConnections="id-ce641470d23e42788a9ec6a9d6087bc0 id-c866a0d11ea64a718dbcec9d50875d11 id-8ac6bf3ab6be420fa4688f45841c7b5c" fillColor="#fac775" archimateElement="id-f0bd505078714e08b3eff3a79e7bf5aa">
           <bounds x="72" y="12" width="144" height="72"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-fb2f4860148a454cb2c1e3116362717d" targetConnections="id-4f5fecdf50a8464694266a8aecfa3304 id-87a5688f7e124f4f92f0028ca74e100f id-888378fcea49492698afd914c369c6a8 id-a015c7e0eecd4defa7a2969c2978b1aa" archimateElement="id-554b147005eb4670bea4288f2789bcce">
+        <child xsi:type="archimate:DiagramObject" id="id-fb2f4860148a454cb2c1e3116362717d" targetConnections="id-4f5fecdf50a8464694266a8aecfa3304 id-87a5688f7e124f4f92f0028ca74e100f id-888378fcea49492698afd914c369c6a8 id-a015c7e0eecd4defa7a2969c2978b1aa" fillColor="#fac775" archimateElement="id-554b147005eb4670bea4288f2789bcce">
           <bounds x="444" y="180" width="120" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-c866a0d11ea64a718dbcec9d50875d11" source="id-fb2f4860148a454cb2c1e3116362717d" target="id-a86a1ce466074731a9660ab0f3e89983" archimateRelationship="id-5b386fa74e1046c08888862d6a3b4ef0">
             <bendpoint startX="-18" startY="-147" endX="366" endY="-12"/>
@@ -745,14 +759,14 @@ Transfer Service Section: Found under the transit logistics and scheduling text,
           <sourceConnection xsi:type="archimate:Connection" id="id-237f95ce94de4cdc9c8f63233ff308f3" source="id-fb2f4860148a454cb2c1e3116362717d" target="id-21f6c39510b64085a84e07159409a1be" archimateRelationship="id-812893e611aa4cf28b8f15188a9f7e98"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-fdb15146336e4896aa7f76dc0e3814df" source="id-fb2f4860148a454cb2c1e3116362717d" target="id-b2a90fe9d04144b286d69952e569b523" archimateRelationship="id-edb940f5fe0c48acbf180b38d11477e5"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-8e3d5ebd505d46848d568ec406d0e468" targetConnections="id-92b738f2118e43249163e3c8054db644" archimateElement="id-42ebf9c8da8b479d89d3529c4f3b35b8">
+        <child xsi:type="archimate:DiagramObject" id="id-8e3d5ebd505d46848d568ec406d0e468" targetConnections="id-92b738f2118e43249163e3c8054db644" fillColor="#fac775" archimateElement="id-42ebf9c8da8b479d89d3529c4f3b35b8">
           <bounds x="60" y="108" width="120" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-2d0569d603c644bca679bc2328af6324" source="id-8e3d5ebd505d46848d568ec406d0e468" target="id-d3a56c0c5fed4d109c0942c37173a363" archimateRelationship="id-c85e5bd6a5fa491a9633a6ebca174973">
             <bendpoint startX="12" startY="70" endX="-204" endY="-2"/>
           </sourceConnection>
           <sourceConnection xsi:type="archimate:Connection" id="id-575a26a1b47740219028d624ebbc7b89" source="id-8e3d5ebd505d46848d568ec406d0e468" target="id-b2a90fe9d04144b286d69952e569b523" archimateRelationship="id-370a29ea85f740e5b7724e5d0a61f4f4"/>
         </child>
-        <child xsi:type="archimate:DiagramObject" id="id-21f6c39510b64085a84e07159409a1be" targetConnections="id-237f95ce94de4cdc9c8f63233ff308f3 id-31c11110d20941cf9c73c389bfc3a9b9" archimateElement="id-e6faa4a4455b4f739cee449c44c210c0">
+        <child xsi:type="archimate:DiagramObject" id="id-21f6c39510b64085a84e07159409a1be" targetConnections="id-237f95ce94de4cdc9c8f63233ff308f3 id-31c11110d20941cf9c73c389bfc3a9b9" fillColor="#fac775" archimateElement="id-e6faa4a4455b4f739cee449c44c210c0">
           <bounds x="516" y="12" width="120" height="55"/>
         </child>
       </child>
